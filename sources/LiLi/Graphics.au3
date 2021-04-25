@@ -318,7 +318,11 @@ Func _ProgressSetImages(ByRef $ID, $ForeBmp = "", $backBMP = "")
 	If Not IsArray($_Progress_Bars) Or UBound($_Progress_Bars, 2) <> 15 Or $ID > (UBound($_Progress_Bars)-1) Then Return SetError(1, 0, 0)
 	If GUICtrlGetHandle($_Progress_Bars[$ID][0]) = 0 Then Return SetError(2, 0, 0)
 	If $ForeBmp <> "" And FileExists($ForeBmp) Then
-		$bmp = _GDIPlus_ImageLoadFromFile($ForeBmp)
+		If @Compiled Then
+			$bmp = _Resource_GetAsImage(StringReplace($ForeBmp, ".jpg", ""), "RT_RCDATA")
+		Else
+			$bmp = _GDIPlus_ImageLoadFromFile("..\..\tools\img\" & $ForeBmp)
+		EndIf
 		If Not @error Then
 ;~ 			_WinAPI_DeleteObject($_Progress_Bars[$ID][6])
 			_GDIPlus_ImageDispose($_Progress_Bars[$ID][6])
@@ -328,7 +332,11 @@ Func _ProgressSetImages(ByRef $ID, $ForeBmp = "", $backBMP = "")
 		EndIf
 	EndIf
 	If $backBMP <> "" And FileExists($backBMP) Then
-		$bmp = _GDIPlus_ImageLoadFromFile($backBMP)
+		If @Compiled Then
+			$bmp = _Resource_GetAsImage(StringReplace($backBMP, ".jpg", ""), "RT_RCDATA")
+		Else
+			$bmp = _GDIPlus_ImageLoadFromFile("..\..\tools\img\" & $backBMP)
+		EndIf
 		If Not @error Then
 ;~ 			_WinAPI_DeleteObject($_Progress_Bars[$ID][7])
 			_GDIPlus_ImageDispose($_Progress_Bars[$ID][7])

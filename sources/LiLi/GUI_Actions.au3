@@ -517,7 +517,7 @@ Func DownloadRelease($release_in_list, $automatic_download)
 	;GUICtrlSetOnEvent($BACK_AREA, "GUI_Back_Download")
 
 	$progress_bar = _ProgressCreate(38 + $offsetx0, 238 + $offsety0, 300, 30)
-	_ProgressSetImages($progress_bar, @ScriptDir & "\tools\img\progress_green.jpg", @ScriptDir & "\tools\img\progress_background.jpg")
+	_ProgressSetImages($progress_bar, "progress_green.jpg", "progress_background.jpg")
 	_ProgressSetFont($progress_bar, "", -1, -1, 0x000000, 0)
 
 	;_ITaskBar_SetProgressState($GUI, 2)
