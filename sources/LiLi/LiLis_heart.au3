@@ -1116,7 +1116,11 @@ Func Create_autorun()
 	If FileExists($usb_letter & "\autorun.inf") Then FileMove($usb_letter & "\autorun.inf",$usb_letter & "\autorun.bak",1)
 
 	; Using LiLi icon
-	FileCopy2(@ScriptDir & "\tools\img\lili.ico", $usb_letter & "\lili.ico")
+	If @Compiled Then
+		_Resource_SaveToFile($usb_letter & "\lili.ico", 'ICO_1')
+	Else
+		FileCopy2(@ScriptDir & "\tools\img\lili.ico", $usb_letter & "\lili.ico")\
+	EndIf
 
 	$icon = "lili.ico"
 

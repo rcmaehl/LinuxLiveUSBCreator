@@ -20,7 +20,7 @@ Func GUI_Options_Menu()
 		$logo = GUICtrlCreatePic("", 32, 45, 344, 107)
 		_Resource_SetToCtrlID(-1, 'JPG_1')
 	Else
-		$logo = GUICtrlCreatePic(@ScriptDir & "\tools\img\logo.jpg", 32, 45, 344, 107)
+		$logo = GUICtrlCreatePic("..\..\tools\img\logo.jpg", 32, 45, 344, 107)
 	EndIf
 	$version = GUICtrlCreateLabel(Translate("Current version")&" : "&GetDisplayVersion(), 88, 196, 250, 25)
 	GUICtrlSetFont($version, 14)

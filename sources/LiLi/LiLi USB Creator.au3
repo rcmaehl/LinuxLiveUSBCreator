@@ -105,6 +105,7 @@ Compiled with    : AutoIT v3.3.14.5
 #AutoIt3Wrapper_Res_File_Add=..\..\tools\img\gui.png, RT_RCDATA, PNG_20, 0
 #AutoIt3Wrapper_Res_File_Add=..\..\tools\img\progress_background.png, RT_RCDATA, progress_background, 0
 #AutoIt3Wrapper_Res_File_Add=..\..\tools\img\progress_green.png, RT_RCDATA, progress_green, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\lili.ico, RT_RCDATA, ICO_1, 0
 #AutoIt3Wrapper_Res_Icon_Add=..\..\tools\img\lili.ico
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 
@@ -385,7 +386,7 @@ If @Compiled Then
 	GUICtrlCreatePic("", 2, 2, 344, 107)
 	_Resource_SetToCtrlID(-1, 'JPG_1')
 Else
-	GUICtrlCreatePic(@ScriptDir & "\tools\img\logo.jpg", 2, 2, 344, 107)
+	GUICtrlCreatePic("..\..\tools\img\logo.jpg", 2, 2, 344, 107)
 EndIf
 $splash_status = GUICtrlCreateLabel("   " & Translate("Starting LinuxLive USB Creator") & " " & $DISPLAY_VERSION, 2, 109, 344, 19)
 GUICtrlSetBkColor($splash_status, 0xFFFFFF)
