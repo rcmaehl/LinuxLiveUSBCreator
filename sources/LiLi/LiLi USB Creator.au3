@@ -74,7 +74,7 @@ Compiled with    : AutoIT v3.3.14.5
 #AutoIt3Wrapper_Res_Description=Easily create a Linux Live USB
 #AutoIt3Wrapper_Res_Fileversion=2.9.88.96
 #AutoIt3Wrapper_Res_Fileversion_AutoIncrement=Y
-#AutoIt3Wrapper_Res_LegalCopyright=CopyLeft Thibaut Lauziere a.k.a Slÿm
+#AutoIt3Wrapper_Res_LegalCopyright=CopyLeft Robert Maehl + Thibaut Lauziere a.k.a Slÿm
 #AutoIt3Wrapper_Res_SaveSource=y
 #AutoIt3Wrapper_Res_requestedExecutionLevel=requireAdministrator
 #AutoIt3Wrapper_Res_Field=AutoIt Version|%AutoItVer%

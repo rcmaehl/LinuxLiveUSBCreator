@@ -1,3 +1,5 @@
+ObjEvent("AutoIt.Error", "_OnAutoItError")
+
 #include-once
 
 Global Const $MHVersionInformation = "V1.04"
@@ -226,8 +228,24 @@ Func GUI_Err_Stop()
 	Exit
 EndFunc
 
-; sending the Crash report using HTTPS
+; sending the Crash report using Github
 Func SendCrashReport()
+
+	ShellExecute("https://github.com/rcmaehl/LinuxLiveUSBCreator/issues/new?body=Automatic+Bug+Report%0A" &_
+	"%0A" & _
+	"REPORTER_ID: " & ReadSetting( "General", "unique_ID") & "%0A" & _
+	"ERROR_MSG " & $sErrorMsg & "%0A" & _
+	"SOFTWARE_VERSION " & $software_version & "%0A" & _
+	"OS_VERSION " & @OSVersion & "%0A" & _
+	"ARCH " & @OSArch & "%0A" & _
+	"SERVICE_PACK " & @OSServicePack & "%0A" & _
+	"LANGUAGE " & _Language_for_stats() & "%0A" & _
+	"TEN_LAST_ACTIONS " & _ArrayToString($last_actions, & "%0A--> ") & "%0A" & _
+	"LAST_CONFIG " & $last_config & "%0A" & _
+	"PROBLEM_DETAILS " & GUICtrlRead($problem_details) & "%0A" & _
+	"EMAIL_ADDRESS " & GUICtrlRead($email_address) & "%0A")
+
+	#cs
 	$hw_open = _WinHttpOpen()
 	; Options to avoid checking SSL certificate
 	_WinHttpSetOption($hw_open, $WINHTTP_OPTION_SECURITY_FLAGS, BitOR($SECURITY_FLAG_IGNORE_UNKNOWN_CA, $SECURITY_FLAG_IGNORE_CERT_CN_INVALID,$SECURITY_FLAG_IGNORE_CERT_DATE_INVALID,$SECURITY_FLAG_IGNORE_CERT_WRONG_USAGE))
@@ -278,6 +296,7 @@ Func SendCrashReport()
 		_WinHttpCloseHandle($hw_open)
 		MsgBox(48,"ERROR","Could not send crash report."&@CRLF&@CRLF&"Please check your internet connection.")
 	EndIf
+	#ce
 
 EndFunc
 
