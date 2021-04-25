@@ -466,7 +466,30 @@ EndIf
 GUICtrlSetData($splash_status, "   " & Translate("Loading interface"))
 
 ; Loading PNG Files
-If @Compiled Then
+If Not @Compiled Or FileExists("theme") Then
+	$path = "..\..\tools\img\"
+	If FileExists("theme") Then $path = "theme\"
+	$EXIT_NORM = _GDIPlus_ImageLoadFromFile($path & "close.PNG")
+	$EXIT_OVER = _GDIPlus_ImageLoadFromFile($path & "close_hover.PNG")
+	$MIN_NORM = _GDIPlus_ImageLoadFromFile($path & "min.PNG")
+	$MIN_OVER = _GDIPlus_ImageLoadFromFile($path & "min_hover.PNG")
+	$BAD = _GDIPlus_ImageLoadFromFile($path & "bad.png")
+	$WARNING = _GDIPlus_ImageLoadFromFile($path & "warning.png")
+	$GOOD = _GDIPlus_ImageLoadFromFile($path & "good.png")
+	$HELP = _GDIPlus_ImageLoadFromFile($path & "help.png")
+	$CD_PNG = _GDIPlus_ImageLoadFromFile($path & "cd.png")
+	$CD_HOVER_PNG = _GDIPlus_ImageLoadFromFile($path & "cd_hover.png")
+	$ISO_PNG = _GDIPlus_ImageLoadFromFile($path & "iso.png")
+	$ISO_HOVER_PNG = _GDIPlus_ImageLoadFromFile($path & "iso_hover.png")
+	$DOWNLOAD_PNG = _GDIPlus_ImageLoadFromFile($path & "download.png")
+	$DOWNLOAD_HOVER_PNG = _GDIPlus_ImageLoadFromFile($path & "download_hover.png")
+	$LAUNCH_PNG = _GDIPlus_ImageLoadFromFile($path & "launch.png")
+	$LAUNCH_HOVER_PNG = _GDIPlus_ImageLoadFromFile($path & "launch_hover.png")
+	$REFRESH_PNG = _GDIPlus_ImageLoadFromFile($path & "refresh.png")
+	$BACK_PNG = _GDIPlus_ImageLoadFromFile($path & "back.png")
+	$BACK_HOVER_PNG = _GDIPlus_ImageLoadFromFile($path & "back_hover.png")
+	$PNG_GUI = _GDIPlus_ImageLoadFromFile($path & "GUI.png")
+Else
 	$EXIT_NORM = _Resource_GetAsImage("PNG_1", $RT_RCDATA)
 	$EXIT_OVER = _Resource_GetAsImage("PNG_2", $RT_RCDATA)
 	$MIN_NORM = _Resource_GetAsImage("PNG_3", $RT_RCDATA)
@@ -487,27 +510,6 @@ If @Compiled Then
 	$BACK_PNG = _Resource_GetAsImage("PNG_18", $RT_RCDATA)
 	$BACK_HOVER_PNG = _Resource_GetAsImage("PNG_19", $RT_RCDATA)
 	$PNG_GUI = _Resource_GetAsImage("PNG_20", $RT_RCDATA)
-Else
-	$EXIT_NORM = _GDIPlus_ImageLoadFromFile("..\..\tools\img\close.PNG")
-	$EXIT_OVER = _GDIPlus_ImageLoadFromFile("..\..\tools\img\close_hover.PNG")
-	$MIN_NORM = _GDIPlus_ImageLoadFromFile("..\..\tools\img\min.PNG")
-	$MIN_OVER = _GDIPlus_ImageLoadFromFile("..\..\tools\img\min_hover.PNG")
-	$BAD = _GDIPlus_ImageLoadFromFile("..\..\tools\img\bad.png")
-	$WARNING = _GDIPlus_ImageLoadFromFile("..\..\tools\img\warning.png")
-	$GOOD = _GDIPlus_ImageLoadFromFile("..\..\tools\img\good.png")
-	$HELP = _GDIPlus_ImageLoadFromFile("..\..\tools\img\help.png")
-	$CD_PNG = _GDIPlus_ImageLoadFromFile("..\..\tools\img\cd.png")
-	$CD_HOVER_PNG = _GDIPlus_ImageLoadFromFile("..\..\tools\img\cd_hover.png")
-	$ISO_PNG = _GDIPlus_ImageLoadFromFile("..\..\tools\img\iso.png")
-	$ISO_HOVER_PNG = _GDIPlus_ImageLoadFromFile("..\..\tools\img\iso_hover.png")
-	$DOWNLOAD_PNG = _GDIPlus_ImageLoadFromFile("..\..\tools\img\download.png")
-	$DOWNLOAD_HOVER_PNG = _GDIPlus_ImageLoadFromFile("..\..\tools\img\download_hover.png")
-	$LAUNCH_PNG = _GDIPlus_ImageLoadFromFile("..\..\tools\img\launch.png")
-	$LAUNCH_HOVER_PNG = _GDIPlus_ImageLoadFromFile("..\..\tools\img\launch_hover.png")
-	$REFRESH_PNG = _GDIPlus_ImageLoadFromFile("..\..\tools\img\refresh.png")
-	$BACK_PNG = _GDIPlus_ImageLoadFromFile("..\..\tools\img\back.png")
-	$BACK_HOVER_PNG = _GDIPlus_ImageLoadFromFile("..\..\tools\img\back_hover.png")
-	$PNG_GUI = _GDIPlus_ImageLoadFromFile("..\..\tools\img\GUI.png")
 EndIf
 
 ;create hotkeyset for opening the helppage
