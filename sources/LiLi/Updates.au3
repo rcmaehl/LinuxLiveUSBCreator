@@ -1,4 +1,56 @@
 ; ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+; ///////////////////////////////// New Update Checker                            ///////////////////////////////////////////////////////////////////////////////
+; ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Func _GetLatestRelease($sCurrent)
+
+	Local $dAPIBin
+	Local $sAPIJSON
+
+	$dAPIBin = InetRead("https://api.fcofix.org/repos/rcmaehl/LinuxLiveUSBCreator/releases")
+	If @error Then Return SetError(1, 0, 0)
+	$sAPIJSON = BinaryToString($dAPIBin)
+	If @error Then Return SetError(2, 0, 0)
+
+	Local $aReleases = _StringBetween($sAPIJSON, '"tag_name":"', '",')
+	If @error Then Return SetError(3, 0, 0)
+	Local $aRelTypes = _StringBetween($sAPIJSON, '"prerelease":', ',')
+	If @error Then Return SetError(3, 1, 0)
+	Local $aCombined[UBound($aReleases)][2]
+
+	For $iLoop = 0 To UBound($aReleases) - 1 Step 1
+		$aCombined[$iLoop][0] = $aReleases[$iLoop]
+		$aCombined[$iLoop][1] = $aRelTypes[$iLoop]
+	Next
+
+	Return _VersionCompare($aCombined[0][0], $sCurrent)
+
+EndFunc
+
+Switch _GetLatestRelease($sVersion)
+	Case -1
+		MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Test Build?", "You're running a newer build than publically available!", 10)
+	Case 0
+		Switch @error
+			Case 0
+				MsgBox($MB_OK+$MB_ICONINFORMATION+$MB_TOPMOST, "Up to Date", "You're running the latest build!", 10)
+			Case 1
+				MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Unable to Check for Updates", "Unable to load release data.", 10)
+			Case 2
+				MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Unable to Check for Updates", "Invalid Data Received!", 10)
+			Case 3
+				Switch @extended
+					Case 0
+						MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Unable to Check for Updates", "Invalid Release Tags Received!", 10)
+					Case 1
+						MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Unable to Check for Updates", "Invalid Release Types Received!", 10)
+				EndSwitch
+		EndSwitch
+	Case 1
+		If MsgBox($MB_YESNO+$MB_ICONINFORMATION+$MB_TOPMOST, "Update Available", "An Update is Availabe, would you like to download it?", 10) = $IDYES Then ShellExecute("https://fcofix.org/LinuxLiveUSBCreator/releases")
+EndSwitch
+
+; ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ; ///////////////////////////////// Updates management                            ///////////////////////////////////////////////////////////////////////////////
 ; ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
