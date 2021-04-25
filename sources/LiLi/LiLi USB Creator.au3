@@ -105,6 +105,7 @@ Compiled with    : AutoIT v3.3.14.5
 #AutoIt3Wrapper_Res_File_Add=..\..\tools\img\gui.png, RT_RCDATA, PNG_20, 0
 #AutoIt3Wrapper_Res_File_Add=..\..\tools\img\progress_background.png, RT_RCDATA, progress_background, 0
 #AutoIt3Wrapper_Res_File_Add=..\..\tools\img\progress_green.png, RT_RCDATA, progress_green, 0
+#AutoIt3Wrapper_Res_Icon_Add=..\..\tools\img\lili.ico
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 
 ; ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

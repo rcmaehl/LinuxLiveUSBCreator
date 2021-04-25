@@ -175,7 +175,11 @@ Func _OnAutoItError()
 
 
     TraySetToolTip("LiLi USB Creator Automatic Crash Report")
-	TraySetIcon(@ScriptDir&"\tools\img\lili.ico")
+	If @Compiled Then
+		TraySetIcon(@ScriptFullPath, 201)
+	Else
+		TraySetIcon("..\..\tools\img\lili.ico")
+	EndIf
 	GUISetState(@SW_SHOW)
     WinActivate("LiLi USB Creator Automatic Crash Report","")
 
@@ -340,7 +344,11 @@ Func _ReceiveReport($report)
 		$aboutitem      = TrayCreateItem("About")
 		TrayCreateItem("")
 		$exititem       = TrayCreateItem("Exit")
-		TraySetIcon(@ScriptDir&"\systray\systray-0.ico")
+		If @Compiled Then
+			TraySetIcon(@ScriptFullPath, 201)
+		Else
+			TraySetIcon("..\..\tools\img\lili.ico")
+		EndIf
 		TraySetState()
 		$i=1
 		While 1
