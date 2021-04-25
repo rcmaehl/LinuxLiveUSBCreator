@@ -27,6 +27,8 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
 - [ ] Improve error messages (e.g. Drive free space insuffient)
     - [ ] Improve translations (e.g. spaces between sentences and punctuation)
 - [ ] Improve distro compatibility
+    - [ ] Add popular distros that may not have been listed
+        - [ ] If possible, list popular distros from TorrentWatch/Other Service automatically
     - [ ] Add torrent file fetching for distro downloading
     - [ ] Use common download paths to allow any common distro to be downloaded
     - [ ] Use common locations of CRC/SHA values to validate downloads instead of hard coded values ([#1](https://github.com/rcmaehl/LinuxLiveUSBCreator/issues/1))
