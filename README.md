@@ -17,3 +17,4 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
 - [ ] Improve distro compatibility
     - [ ] Use common download paths to allow any common distro to be downloaded
     - [ ] Use common locations of CRC/SHA values to validate downloads instead of hard coded values
+- [ ] Have updater check GitHub for updates
