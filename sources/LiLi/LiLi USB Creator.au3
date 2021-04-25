@@ -2,7 +2,7 @@
 ///////////////////////////////// About this software                           ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Author           : Robert Maehl, forked from Thibaut Lauzièreppa
+Author           : Robert Maehl, forked from Thibaut LauziÃ¨reppa
 License          : GPL v3.0
 Website          : https://github.com/rcmaehl/LinuxLiveUSBCreator, original at http://www.linuxliveusb.com
 Compiled with    : AutoIT v3.3.14.5
@@ -72,9 +72,9 @@ Compiled with    : AutoIT v3.3.14.5
 #AutoIt3Wrapper_UseUpx=n
 #AutoIt3Wrapper_Res_Comment=Enjoy !
 #AutoIt3Wrapper_Res_Description=Easily create a Linux Live USB
-#AutoIt3Wrapper_Res_Fileversion=2.9.88.83
+#AutoIt3Wrapper_Res_Fileversion=2.9.88.85
 #AutoIt3Wrapper_Res_Fileversion_AutoIncrement=Y
-#AutoIt3Wrapper_Res_LegalCopyright=CopyLeft Thibaut Lauziere a.k.a Slÿm
+#AutoIt3Wrapper_Res_LegalCopyright=CopyLeft Thibaut Lauziere a.k.a SlÃ¿m
 #AutoIt3Wrapper_Res_SaveSource=y
 #AutoIt3Wrapper_Res_requestedExecutionLevel=requireAdministrator
 #AutoIt3Wrapper_Res_Field=AutoIt Version|%AutoItVer%
@@ -82,6 +82,7 @@ Compiled with    : AutoIT v3.3.14.5
 #AutoIt3Wrapper_Res_Field=Site|http://www.linuxliveusb.com
 #AutoIt3Wrapper_Add_Constants=n
 #AutoIt3Wrapper_AU3Check_Parameters=-w 4
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\logo.jpg, RT_RCDATA, JPG_1, 0
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 
 ; ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -341,6 +342,7 @@ EndIf
 #include "Boot_Menus.au3"
 #include "Checking_And_Recognizing.au3"
 #include "Releases.au3"
+#include "ResourcesEx.au3"
 #include "LiLis_heart.au3"
 #include "GUI_Actions.au3"
 #include "Options_Menu.au3"
@@ -356,7 +358,12 @@ $DISPLAY_VERSION = GetDisplayVersion()
 $splash_gui = GUICreate("Loading LiLi", 348, 130, -1, -1, $WS_POPUP)
 GUISetFont($font_size)
 GUISetBkColor(0x000000)
-GUICtrlCreatePic(@ScriptDir & "\tools\img\logo.jpg", 2, 2, 344, 107)
+If @Compiled Then
+	GUICtrlCreatePic("", 2, 2, 344, 107)
+	_Resource_SetToCtrlID(-1, 'JPG_1')
+Else
+	GUICtrlCreatePic(@ScriptDir & "\tools\img\logo.jpg", 2, 2, 344, 107)
+EndIf
 $splash_status = GUICtrlCreateLabel("   " & Translate("Starting LinuxLive USB Creator") & " " & $DISPLAY_VERSION, 2, 109, 344, 19)
 GUICtrlSetBkColor($splash_status, 0xFFFFFF)
 GUISetState(@SW_SHOW)

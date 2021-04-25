@@ -16,7 +16,12 @@ Func GUI_Options_Menu()
 	$Tabs = GUICtrlCreateTab(8, 8, 385, 393)
 	GUICtrlSetResizing(-1, $GUI_DOCKWIDTH+$GUI_DOCKHEIGHT)
 	$tab_general = GUICtrlCreateTabItem(Translate("General"))
-	$logo = GUICtrlCreatePic(@ScriptDir & "\tools\img\logo.jpg", 32, 45, 344, 107)
+	If @Compiled Then
+		$logo = GUICtrlCreatePic("", 32, 45, 344, 107)
+		_Resource_SetToCtrlID(-1, 'JPG_1')
+	Else
+		$logo = GUICtrlCreatePic(@ScriptDir & "\tools\img\logo.jpg", 32, 45, 344, 107)
+	EndIf
 	$version = GUICtrlCreateLabel(Translate("Current version")&" : "&GetDisplayVersion(), 88, 196, 250, 25)
 	GUICtrlSetFont($version, 14)
 	$last_version_available = GUICtrlCreateLabel(Translate("Last version")&" : "&GetLastAvailableVersion(), 88, 231, 250, 25)
