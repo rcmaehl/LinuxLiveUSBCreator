@@ -2,10 +2,10 @@
 ///////////////////////////////// About this software                           ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Author           : Thibaut Lauzière
+Author           : Robert Maehl, forked from Thibaut Lauzièreppa
 License          : GPL v3.0
-Website          : http://www.linuxliveusb.com
-Compiled with    : AutoIT v3.3.12.0
+Website          : https://github.com/rcmaehl/LinuxLiveUSBCreator, original at http://www.linuxliveusb.com
+Compiled with    : AutoIT v3.3.14.5
 
 ///////////////////////////////// Descriptions of AU3 files                      ///////////////////////////////////////////////////////////////////////////////
 
@@ -23,17 +23,18 @@ Compiled with    : AutoIT v3.3.12.0
 	Logs_And_Status.au3 :  Manage logging/reporting and traffic lights
 	Options_Menu.au3 : contain the Options Menu (Menu.kxf is the Koda file for options menu)
 	Releases.au3 : functions to parse and cache the compatibility list (list of supported linux) and get each value. Also fills the combo-box.
+	ResourcesEx.au3: Functions to set needed images as resources internally instead of external files that clutter a directory
 	Settings.au3 : Read and Write settings. Abstraction layer to read/write from registry or from file depending on lili's mode (portable or standard)
 	Statistics.au3 : Send anonymous usage statistics to Universal Analytics (can be disabled by users with skip_stats advanced value)
 	VirtualBox.au3 : Manage Portable-VirtualBox settings
 	Updates.au3 : check for software updates + functions to compare version numbers
 	WinHTTP.au3 : Manage POST request for sending crash logs (based on trancexx and ProgAndy work)
 
-///////////////////////////////// Descriptions of structure                      ///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////// Descriptions of uncompiled structure           ///////////////////////////////////////////////////////////////////////////////
 
-	bonus : contains MD5, SHA1 and CRC32 easy hashers
-	logs : contains maximum 1 month of comprehensive logs and crash reports
 	sources : contains all the sources
+		-> Bonus: contains sources for MD5, SHA1 and CRC32 easy hashers
+		-> LiLi: contains sources for LiLi
 	tools :
 		-> boot-menus : some pre-created boot menus
 		-> img : images for all the GUI
@@ -50,10 +51,11 @@ Compiled with    : AutoIT v3.3.12.0
 
 ///////////////////////////////// Compilation                                    ///////////////////////////////////////////////////////////////////////////////
 
-	Copy all the sources AU3 files from "sources" folder to LiLi's root folder (one folder up)
+	Git Clone rcmaehl/LinuxLiveUSBCreator
 	Install the right AutoIT version mentionned in this header
 	(Recommended) Install the complete SciTE Editor
 	To be able to see Console logging in real time : Browse to "C:\Program Files (x86)\AutoIt3\SciTE\SciTE.exe" / Right-Click -> Properties -> Compatibility -> Run as Admin
+	Navigate to sources/lili/
 	Open "LiLi USB Creator.au3" and press F5 to give it a go
 
 #ce/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
