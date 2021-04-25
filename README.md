@@ -30,6 +30,8 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
     - [ ] Add popular distros that may not have been listed
         - [ ] If possible, list popular distros from TorrentWatch/Other Service automatically
     - [ ] Add torrent file fetching for distro downloading
+    - [ ] Include information such as syslinux versions in a definitions file
+        - [ ] Allow defintions file to be updated/downloaded seperately
     - [ ] Use common download paths to allow any common distro to be downloaded
     - [ ] Use common locations of CRC/SHA values to validate downloads instead of hard coded values ([#1](https://github.com/rcmaehl/LinuxLiveUSBCreator/issues/1))
         - [ ] Validate SHA values using their GPG keys (if available)
@@ -44,3 +46,12 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
 - [ ] Update contact information within files to not bother the old developer
     - [x] Convert Emails to Discord Links
     - [ ] Have bug reports generate a github issue
+
+## Compiling from Source
+
+* git clone rcmaehl/LinuxLiveUSBCreator
+* Intall the latest AutoIt Version (https://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/autoit-v3-setup.exe)
+* (Recommended) Install the complete SciTE Editor (https://www.autoitscript.com/cgi-bin/getfile.pl?../autoit3/scite/download/SciTE4AutoIt3.exe)
+* Run SciTE as Administrator to be able to see logging
+* Navigate to sources/lili/
+* Open "LiLi USB Creator.au3" and press F7 to compile
