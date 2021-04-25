@@ -7,7 +7,10 @@
 
 # LinuxLiveUSBCreator
 A fork of Thibaut Lauzièr's Linux Live USB Creator, obtained from http://www.linuxliveusb.com/en/about/sources
+![image](https://user-images.githubusercontent.com/716581/115981054-1358e080-a55f-11eb-9450-93f93ac25b5e.png)
 
+
+## Goals
 This project aims to bring bug fixes and improvements to Linux Live USB Creator. The following are changes I've made or likely to make. Feedback is appreciated within the discord server linked above.
 
 - [ ] Improve executiable resources to allow LiLi to be a single executible instead of an executible and extra files.
