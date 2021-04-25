@@ -10,7 +10,7 @@ A fork of Thibaut Lauzièr's Linux Live USB Creator, obtained from http://www.li
 
 This project aims to bring bug fixes and improvements to Linux Live USB Creator. The following are changes I've made or likely to make. Feedback is appreciated within the discord server linked above.
 
-- [ ] Use executiable resources to allow LiLi to be a single executible instead of an executible and extra files.
+- [ ] Improve executiable resources to allow LiLi to be a single executible instead of an executible and extra files.
     - [ ] Convert GUI Image creation calls to detect if compiled and use internal resources from #AutoIt3Wrapper_Res_Icon_Add
         - [ ] Add Themeing ability back by detecting a /theme/ directory, or similar
     - [ ] FileInstall or FileWrite needed .cfg files
@@ -18,4 +18,6 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
 - [ ] Improve distro compatibility
     - [ ] Use common download paths to allow any common distro to be downloaded
     - [ ] Use common locations of CRC/SHA values to validate downloads instead of hard coded values
-- [ ] Have updater check GitHub for updates
+- [ ] Improve Windows 10 handling
+- [ ] Update updater check GitHub for updates
+- [ ] Update contact information within files to not bother the old developer
