@@ -11,8 +11,15 @@ A fork of Thibaut Lauzièr's Linux Live USB Creator, obtained from http://www.li
 This project aims to bring bug fixes and improvements to Linux Live USB Creator. The following are changes I've made or likely to make. Feedback is appreciated within the discord server linked above.
 
 - [ ] Improve executiable resources to allow LiLi to be a single executible instead of an executible and extra files.
-    - [ ] Convert GUI Image creation calls to detect if compiled and use internal resources from #AutoIt3Wrapper_Res_Icon_Add
-        - [ ] Add Themeing ability back by detecting a /theme/ directory, or similar
+    - [x] Convert GUI Image creation calls to detect if compiled and use internal resources from #AutoIt3Wrapper_Res_Icon_Add
+        - [x] GUICtrlCreateGraphic / GUICtrlSetGraphic
+        - [x] GUICtrlCreateIcon
+        - [x] GUICtrlCreatePic
+        - [x] GUICtrlSetImage
+        - [x] GUISetIcon
+        - [x] TraySetIcon / TraySetPauseIcon
+        - [x] _GDIPlus_ImageLoadFromFile
+    - [ ] Add Themeing ability back by detecting a /theme/ directory, or similar
     - [ ] FileInstall or FileWrite needed .cfg files
 - [ ] Improve error messages (e.g. Drive free space insuffient)
 - [ ] Improve distro compatibility
