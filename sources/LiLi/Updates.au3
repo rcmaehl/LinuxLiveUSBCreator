@@ -27,7 +27,7 @@ Func _GetLatestRelease($sCurrent)
 
 EndFunc
 
-Switch _GetLatestRelease($sVersion)
+Switch _GetLatestRelease(GetDisplayVersion())
 	Case -1
 		MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Test Build?", "You're running a newer build than publically available!", 10)
 	Case 0

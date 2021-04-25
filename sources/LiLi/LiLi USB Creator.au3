@@ -324,32 +324,31 @@ EndIf
 #include-once
 
 ; AutoIT native includes
-#include "GuiConstants.au3"
-#include "GuiConstantsEx.au3"
-#include "GuiListView.au3"
-#include "GuiImageList.au3"
-#include "WinApi.au3"
-#include "WinAPIFiles.au3"
-#include "GDIPlus.au3"
-#include "Constants.au3"
-#include "ProgressConstants.au3"
-#include "ComboConstants.au3"
-#include "WindowsConstants.au3"
-#include "ButtonConstants.au3"
-#include "StaticConstants.au3"
-#include "EditConstants.au3"
-#include "GUIConstantsEx.au3"
-#include "GUIListBox.au3"
-#include "GuiTreeView.au3"
-#include "StaticConstants.au3"
-#include "TabConstants.au3"
-#include "Array.au3"
-#include "String.au3"
-#include "File.au3"
-#include "INet.au3"
-#include "Date.au3"
-#include "WinHTTP.au3"
-#include "Crypt.au3"
+#include <Date.au3>
+#include <File.au3>
+#include <INet.au3>
+#include <Misc.au3>
+#include <Array.au3>
+#include <Crypt.au3>
+#include <String.au3>
+#include <WinAPI.au3>
+#include <WinHTTP.au3>
+#include <GDIPlus.au3>
+#include <Constants.au3>
+#include <GUIListBox.au3>
+#include <GUITreeView.au3>
+#include <WinAPIFiles.au3>
+#include <GuiListView.au3>
+#include <TabConstants.au3>
+#include <GUIImageList.au3>
+#include <GUIConstants.au3>
+#include <EditConstants.au3>
+#include <GUIConstantsEx.au3>
+#include <ComboConstants.au3>
+#include <ButtonConstants.au3>
+#include <StaticConstants.au3>
+#include <WindowsConstants.au3>
+#include <ProgressConstants.au3>
 
 
 ; LiLi's components
