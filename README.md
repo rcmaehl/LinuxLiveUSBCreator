@@ -31,6 +31,6 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
     - [ ] Use common locations of CRC/SHA values to validate downloads instead of hard coded values
 - [ ] Improve Windows 10 handling
     - [x] Update @OSVersion calls
-    - [ ] Check for other jiggery pokery
+    - [ ] Check for other issues/conflicts
 - [ ] Update updater check GitHub for updates
 - [x] Update contact information within files to not bother the old developer
