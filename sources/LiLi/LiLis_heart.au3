@@ -337,7 +337,7 @@ Func Create_Stick_From_IMG($img_file)
 	$physical_disk_number=GiveMePhysicalDisk($usb_letter)
 
 	if NOT ($physical_disk_number <> "ERROR" AND $physical_disk_number >0 AND $physical_disk_number <> GiveMePhysicalDisk("C:")) Then
-		MsgBox(16,"Error","There was an error while trying to write IMG file to USB."&@CRLF&@CRLF&"Please contact debug-img@linuxliveusb.com."&@CRLF&@CRLF&"Thank You")
+		MsgBox(16,"Error","There was an error while trying to write IMG file to USB."&@CRLF&@CRLF&"Please report at https://discord.gg/uBnBcBx"&@CRLF&@CRLF&"Thank You")
 		Return -1
 	EndIf
 

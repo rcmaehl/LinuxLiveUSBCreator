@@ -219,11 +219,11 @@ Func GUI_Options_Menu()
 					Return ""
 				EndIf
 			Case $contact
-				ShellExecute("http://www.linuxliveusb.com/contact")
+				ShellExecute("https://discord.gg/uBnBcBx")
 			Case $licence
-				ShellExecute("http://www.linuxliveusb.com/about/license")
+				ShellExecute("https://github.com/rcmaehl/LinuxLiveUSBCreator/blob/main/LICENSE")
 			Case $donate
-				ShellExecute("http://www.linuxliveusb.com/donations")
+				ShellExecute("https://paypal.me/rhsky")
 			Case $language_list
 				$language_selected=GUICtrlRead($language_list)
 				if $language_selected="Automatic" OR StringInStr($language_selected,"—")>0 Then

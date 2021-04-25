@@ -266,7 +266,7 @@ Func SendCrashReport()
 		if StringInStr($source_return,"CRASH_SUCCESSFULLY_RECORDED") Then
 			MsgBox(64,"","You crash report has been sent."&@CRLF&@CRLF&"Thank you !")
 		Else
-			MsgBox(48,"ERROR","Could not send crash report."&@CRLF&@CRLF&"Please contact debug@linuxliveusb.com")
+			MsgBox(48,"ERROR","Could not send crash report."&@CRLF&@CRLF&"Please contact https://discord.gg/uBnBcBx")
 		EndIf
 	Else
 		_WinHttpCloseHandle($h_openRequest)

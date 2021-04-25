@@ -79,7 +79,7 @@ Compiled with    : AutoIT v3.3.14.5
 #AutoIt3Wrapper_Res_requestedExecutionLevel=requireAdministrator
 #AutoIt3Wrapper_Res_Field=AutoIt Version|%AutoItVer%
 #AutoIt3Wrapper_Res_Field=Compile Date|%date% %time%
-#AutoIt3Wrapper_Res_Field=Site|http://www.linuxliveusb.com
+#AutoIt3Wrapper_Res_Field=Site|https://github.com/rcmaehl/LinuxLiveUSBCreator
 #AutoIt3Wrapper_Add_Constants=n
 #AutoIt3Wrapper_AU3Check_Parameters=-w 4
 #AutoIt3Wrapper_Res_File_Add=..\..\tools\img\logo.jpg, RT_RCDATA, JPG_1, 0

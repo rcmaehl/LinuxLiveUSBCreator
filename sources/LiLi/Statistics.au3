@@ -37,6 +37,8 @@ EndFunc   ;==>_Language_for_stats
 
 Func OSName()
 	Switch @OSVersion
+		Case "WIN_10"
+			Return "Windows 10"
 		Case "WIN_81"
 			Return "Windows 8.1"
 		Case "WIN_8"
