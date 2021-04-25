@@ -29,7 +29,7 @@ jobs:
            cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe
            Move-Item aut2exe.exe LinuxLiveUSBCreator
            cd LinuxLiveUSBCreator
-           $ver= git describe --tags
+           $ver= git describe --always
            mkdir build
            ./Aut2exe.exe /in sources\LiLi\"LiLi USB Creator.au3" /out build\"LiLi USB Creator"$ver.exe /nopack /icon tools\img\lili.ico /comp 4 /x64
     - name: Upload
