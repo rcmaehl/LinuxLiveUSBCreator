@@ -1119,7 +1119,7 @@ Func Create_autorun()
 	If @Compiled Then
 		_Resource_SaveToFile($usb_letter & "\lili.ico", 'ICO_1')
 	Else
-		FileCopy2(@ScriptDir & "\tools\img\lili.ico", $usb_letter & "\lili.ico")\
+		FileCopy2("..\..\tools\img\lili.ico", $usb_letter & "\lili.ico")\
 	EndIf
 
 	$icon = "lili.ico"

@@ -68,7 +68,7 @@ Compiled with    : AutoIT v3.3.14.5
 #pragma compile(AutoItExecuteAllowed, True)
 
 #Region ;**** Directives created by AutoIt3Wrapper_GUI ****
-#AutoIt3Wrapper_Icon=tools\img\lili.ico
+#AutoIt3Wrapper_Icon=..\..\tools\img\lili.ico
 #AutoIt3Wrapper_UseUpx=n
 #AutoIt3Wrapper_Res_Comment=Enjoy !
 #AutoIt3Wrapper_Res_Description=Easily create a Linux Live USB
@@ -489,26 +489,26 @@ If @Compiled Then
 	$BACK_HOVER_PNG = _Resource_GetAsImage("PNG_19", $RT_RCDATA)
 	$PNG_GUI = _Resource_GetAsImage("PNG_20", $RT_RCDATA)
 Else
-	$EXIT_NORM = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\close.PNG")
-	$EXIT_OVER = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\close_hover.PNG")
-	$MIN_NORM = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\min.PNG")
-	$MIN_OVER = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\min_hover.PNG")
-	$BAD = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\bad.png")
-	$WARNING = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\warning.png")
-	$GOOD = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\good.png")
-	$HELP = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\help.png")
-	$CD_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\cd.png")
-	$CD_HOVER_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\cd_hover.png")
-	$ISO_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\iso.png")
-	$ISO_HOVER_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\iso_hover.png")
-	$DOWNLOAD_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\download.png")
-	$DOWNLOAD_HOVER_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\download_hover.png")
-	$LAUNCH_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\launch.png")
-	$LAUNCH_HOVER_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\launch_hover.png")
-	$REFRESH_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\refresh.png")
-	$BACK_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\back.png")
-	$BACK_HOVER_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\back_hover.png")
-	$PNG_GUI = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\GUI.png")
+	$EXIT_NORM = _GDIPlus_ImageLoadFromFile("..\..\tools\img\close.PNG")
+	$EXIT_OVER = _GDIPlus_ImageLoadFromFile("..\..\tools\img\close_hover.PNG")
+	$MIN_NORM = _GDIPlus_ImageLoadFromFile("..\..\tools\img\min.PNG")
+	$MIN_OVER = _GDIPlus_ImageLoadFromFile("..\..\tools\img\min_hover.PNG")
+	$BAD = _GDIPlus_ImageLoadFromFile("..\..\tools\img\bad.png")
+	$WARNING = _GDIPlus_ImageLoadFromFile("..\..\tools\img\warning.png")
+	$GOOD = _GDIPlus_ImageLoadFromFile("..\..\tools\img\good.png")
+	$HELP = _GDIPlus_ImageLoadFromFile("..\..\tools\img\help.png")
+	$CD_PNG = _GDIPlus_ImageLoadFromFile("..\..\tools\img\cd.png")
+	$CD_HOVER_PNG = _GDIPlus_ImageLoadFromFile("..\..\tools\img\cd_hover.png")
+	$ISO_PNG = _GDIPlus_ImageLoadFromFile("..\..\tools\img\iso.png")
+	$ISO_HOVER_PNG = _GDIPlus_ImageLoadFromFile("..\..\tools\img\iso_hover.png")
+	$DOWNLOAD_PNG = _GDIPlus_ImageLoadFromFile("..\..\tools\img\download.png")
+	$DOWNLOAD_HOVER_PNG = _GDIPlus_ImageLoadFromFile("..\..\tools\img\download_hover.png")
+	$LAUNCH_PNG = _GDIPlus_ImageLoadFromFile("..\..\tools\img\launch.png")
+	$LAUNCH_HOVER_PNG = _GDIPlus_ImageLoadFromFile("..\..\tools\img\launch_hover.png")
+	$REFRESH_PNG = _GDIPlus_ImageLoadFromFile("..\..\tools\img\refresh.png")
+	$BACK_PNG = _GDIPlus_ImageLoadFromFile("..\..\tools\img\back.png")
+	$BACK_HOVER_PNG = _GDIPlus_ImageLoadFromFile("..\..\tools\img\back_hover.png")
+	$PNG_GUI = _GDIPlus_ImageLoadFromFile("..\..\tools\img\GUI.png")
 EndIf
 
 ;create hotkeyset for opening the helppage
