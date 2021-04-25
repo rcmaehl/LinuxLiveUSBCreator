@@ -14,7 +14,7 @@ A fork of Thibaut Lauzièr's Linux Live USB Creator, obtained from http://www.li
 This project aims to bring bug fixes and improvements to Linux Live USB Creator. The following are changes I've made or likely to make. Feedback is appreciated within the discord server linked above.
 
 - [ ] Improve executiable resources to allow LiLi to be a single executible instead of an executible and extra files.
-    - [x] Convert GUI Image creation calls to detect if compiled and use internal resources from #AutoIt3Wrapper_Res_Icon_Add
+    - [x] Convert GUI Image creation calls to detect if compiled and use internal resources from #AutoIt3Wrapper_Res_Icon_Add / #AutoIt3Wrapper_Res_File_Add
         - [x] GUICtrlCreateGraphic / GUICtrlSetGraphic
         - [x] GUICtrlCreateIcon
         - [x] GUICtrlCreatePic
