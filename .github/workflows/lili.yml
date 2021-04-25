@@ -1,4 +1,4 @@
-name: ncc
+name: lili
 
 on: 
  push:
@@ -6,8 +6,6 @@ on:
      - '.github/**'
      - '!.github/workflows/**'
      - '*.md'
-     - 'GUI_Concepts/**'
-     - 'Lang/**'
 
 jobs:
   build:
