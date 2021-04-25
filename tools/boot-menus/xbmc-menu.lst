@@ -1,0 +1,19 @@
+title XBMCLive
+	kernel /live/vmlinuz video=vesafb boot=live xbmc=autostart,nodiskmount splash quiet loglevel=0 quickreboot quickusbmodules notimezone noaccessibility noapparmor noaptcdrom noautologin noxautologin noconsolekeyboard nofastboot nognomepanel nohosts nokpersonalizer nolanguageselector nolocales nonetworking nopowermanagement noprogramcrashes nojockey nosudo noupdatenotifier nouser nopolkitconf noxautoconfig noxscreensaver nopreseed union=aufs
+	initrd /live/initrd.img
+	
+title XBMCLive, SAFE MODE
+	kernel /live/vmlinuz boot=live xbmc=nodiskmount quiet loglevel=0 quickreboot quickusbmodules notimezone noaccessibility noapparmor noaptcdrom noautologin noxautologin noconsolekeyboard nofastboot nognomepanel nohosts nokpersonalizer nolanguageselector nolocales nonetworking nopowermanagement noprogramcrashes nojockey nosudo noupdatenotifier nouser nopolkitconf noxautoconfig noxscreensaver nopreseed union=aufs
+	initrd /live/initrd.img
+	
+title Install XBMCLive
+	kernel /install/vmlinuz quiet preseed/file=/cdrom/install/preseed.cfg cdrom-detect/try-usb=true priority=critical
+	initrd /install/initrd.gz
+	
+title Memory test (memtest86+)
+    kernel /live/memtest
+	
+title Boot the First Hard Disk
+	root (hd0)
+
+chainloader +1
