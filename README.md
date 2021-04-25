@@ -14,7 +14,7 @@ A fork of Thibaut Lauzièr's Linux Live USB Creator, obtained from http://www.li
 This project aims to bring bug fixes and improvements to Linux Live USB Creator. The following are changes I've made or likely to make. Feedback is appreciated within the discord server linked above.
 
 - [ ] Improve executiable resources to allow LiLi to be a single executible instead of an executible and extra files.
-    - [x] Convert GUI Image creation calls to detect if compiled and use internal resources from #AutoIt3Wrapper_Res_Icon_Add
+    - [x] Convert GUI Image creation calls to detect if compiled and use internal resources from #AutoIt3Wrapper_Res_Icon_Add / #AutoIt3Wrapper_Res_File_Add
         - [x] GUICtrlCreateGraphic / GUICtrlSetGraphic
         - [x] GUICtrlCreateIcon
         - [x] GUICtrlCreatePic
@@ -31,8 +31,8 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
         - [ ] If possible, list popular distros from TorrentWatch/Other Service automatically
     - [ ] Add torrent file fetching for distro downloading
     - [ ] Include information such as syslinux versions in a definitions file
-        - [ ] Allow defintions file to be updated/downloaded seperately
-    - [ ] Use common download paths to allow any common distro to be downloaded
+        - [ ] Allow defintions file to be updated/downloaded separately
+    - [ ] Use common download paths to allow any distro version to be downloaded
     - [ ] Use common locations of CRC/SHA values to validate downloads instead of hard coded values ([#1](https://github.com/rcmaehl/LinuxLiveUSBCreator/issues/1))
         - [ ] Validate SHA values using their GPG keys (if available)
             - [ ] Warn but allow continuation if offline
