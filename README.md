@@ -22,7 +22,7 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
         - [x] GUISetIcon
         - [x] TraySetIcon / TraySetPauseIcon
         - [x] _GDIPlus_ImageLoadFromFile
-    - [ ] Add Themeing ability back by detecting a /theme/ directory, or similar
+    - [x] Add Themeing ability back by detecting a /theme/ directory, or similar
     - [ ] FileInstall or FileWrite needed .cfg files
 - [ ] Improve error messages (e.g. Drive free space insuffient)
     - [ ] Improve translations (e.g. spaces between sentences and punctuation)
