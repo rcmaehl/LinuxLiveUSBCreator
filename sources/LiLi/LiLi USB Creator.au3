@@ -72,7 +72,7 @@ Compiled with    : AutoIT v3.3.14.5
 #AutoIt3Wrapper_UseUpx=n
 #AutoIt3Wrapper_Res_Comment=Enjoy !
 #AutoIt3Wrapper_Res_Description=Easily create a Linux Live USB
-#AutoIt3Wrapper_Res_Fileversion=2.9.88.85
+#AutoIt3Wrapper_Res_Fileversion=2.9.88.95
 #AutoIt3Wrapper_Res_Fileversion_AutoIncrement=Y
 #AutoIt3Wrapper_Res_LegalCopyright=CopyLeft Thibaut Lauziere a.k.a Slÿm
 #AutoIt3Wrapper_Res_SaveSource=y
@@ -83,6 +83,26 @@ Compiled with    : AutoIT v3.3.14.5
 #AutoIt3Wrapper_Add_Constants=n
 #AutoIt3Wrapper_AU3Check_Parameters=-w 4
 #AutoIt3Wrapper_Res_File_Add=..\..\tools\img\logo.jpg, RT_RCDATA, JPG_1, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\close.png, RT_RCDATA, PNG_1, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\close_hover.png, RT_RCDATA, PNG_2, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\min.png, RT_RCDATA, PNG_3, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\min_hover.png, RT_RCDATA, PNG_4, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\bad.png, RT_RCDATA, PNG_5, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\warning.png, RT_RCDATA, PNG_6, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\good.png, RT_RCDATA, PNG_7, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\help.png, RT_RCDATA, PNG_8, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\cd.png, RT_RCDATA, PNG_9, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\cd_hover.png, RT_RCDATA, PNG_10, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\iso.png, RT_RCDATA, PNG_11, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\iso_hover.png, RT_RCDATA, PNG_12, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\download.png, RT_RCDATA, PNG_13, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\download_hover.png, RT_RCDATA, PNG_14, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\launch.png, RT_RCDATA, PNG_15, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\launch_hover.png, RT_RCDATA, PNG_16, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\refresh.png, RT_RCDATA, PNG_17, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\back.png, RT_RCDATA, PNG_18, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\back_hover.png, RT_RCDATA, PNG_19, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\gui.png, RT_RCDATA, PNG_20, 0
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 
 ; ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -443,26 +463,49 @@ EndIf
 GUICtrlSetData($splash_status, "   " & Translate("Loading interface"))
 
 ; Loading PNG Files
-$EXIT_NORM = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\close.PNG")
-$EXIT_OVER = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\close_hover.PNG")
-$MIN_NORM = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\min.PNG")
-$MIN_OVER = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\min_hover.PNG")
-$BAD = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\bad.png")
-$WARNING = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\warning.png")
-$GOOD = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\good.png")
-$HELP = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\help.png")
-$CD_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\cd.png")
-$CD_HOVER_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\cd_hover.png")
-$ISO_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\iso.png")
-$ISO_HOVER_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\iso_hover.png")
-$DOWNLOAD_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\download.png")
-$DOWNLOAD_HOVER_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\download_hover.png")
-$LAUNCH_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\launch.png")
-$LAUNCH_HOVER_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\launch_hover.png")
-$REFRESH_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\refresh.png")
-$BACK_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\back.png")
-$BACK_HOVER_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\back_hover.png")
-$PNG_GUI = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\GUI.png")
+If @Compiled Then
+	$EXIT_NORM = _Resource_GetAsImage("PNG_1", $RT_RCDATA)
+	$EXIT_OVER = _Resource_GetAsImage("PNG_2", $RT_RCDATA)
+	$MIN_NORM = _Resource_GetAsImage("PNG_3", $RT_RCDATA)
+	$MIN_OVER = _Resource_GetAsImage("PNG_4", $RT_RCDATA)
+	$BAD = _Resource_GetAsImage("PNG_5", $RT_RCDATA)
+	$WARNING = _Resource_GetAsImage("PNG_6", $RT_RCDATA)
+	$GOOD = _Resource_GetAsImage("PNG_7", $RT_RCDATA)
+	$HELP = _Resource_GetAsImage("PNG_8", $RT_RCDATA)
+	$CD_PNG = _Resource_GetAsImage("PNG_9", $RT_RCDATA)
+	$CD_HOVER_PNG = _Resource_GetAsImage("PNG_10", $RT_RCDATA)
+	$ISO_PNG = _Resource_GetAsImage("PNG_11", $RT_RCDATA)
+	$ISO_HOVER_PNG = _Resource_GetAsImage("PNG_12", $RT_RCDATA)
+	$DOWNLOAD_PNG = _Resource_GetAsImage("PNG_13", $RT_RCDATA)
+	$DOWNLOAD_HOVER_PNG = _Resource_GetAsImage("PNG_14", $RT_RCDATA)
+	$LAUNCH_PNG = _Resource_GetAsImage("PNG_15", $RT_RCDATA)
+	$LAUNCH_HOVER_PNG = _Resource_GetAsImage("PNG_16", $RT_RCDATA)
+	$REFRESH_PNG = _Resource_GetAsImage("PNG_17", $RT_RCDATA)
+	$BACK_PNG = _Resource_GetAsImage("PNG_18", $RT_RCDATA)
+	$BACK_HOVER_PNG = _Resource_GetAsImage("PNG_19", $RT_RCDATA)
+	$PNG_GUI = _Resource_GetAsImage("PNG_20", $RT_RCDATA)
+Else
+	$EXIT_NORM = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\close.PNG")
+	$EXIT_OVER = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\close_hover.PNG")
+	$MIN_NORM = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\min.PNG")
+	$MIN_OVER = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\min_hover.PNG")
+	$BAD = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\bad.png")
+	$WARNING = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\warning.png")
+	$GOOD = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\good.png")
+	$HELP = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\help.png")
+	$CD_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\cd.png")
+	$CD_HOVER_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\cd_hover.png")
+	$ISO_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\iso.png")
+	$ISO_HOVER_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\iso_hover.png")
+	$DOWNLOAD_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\download.png")
+	$DOWNLOAD_HOVER_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\download_hover.png")
+	$LAUNCH_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\launch.png")
+	$LAUNCH_HOVER_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\launch_hover.png")
+	$REFRESH_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\refresh.png")
+	$BACK_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\back.png")
+	$BACK_HOVER_PNG = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\back_hover.png")
+	$PNG_GUI = _GDIPlus_ImageLoadFromFile(@ScriptDir & "\tools\img\GUI.png")
+EndIf
 
 ;create hotkeyset for opening the helppage
 HotKeySet("{F1}", "GUI_Help")
