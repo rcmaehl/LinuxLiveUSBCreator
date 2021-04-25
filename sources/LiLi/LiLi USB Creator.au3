@@ -51,12 +51,12 @@ Compiled with    : AutoIT v3.3.14.5
 
 ///////////////////////////////// Compilation                                    ///////////////////////////////////////////////////////////////////////////////
 
-	Git Clone rcmaehl/LinuxLiveUSBCreator
-	Install the right AutoIT version mentionned in this header
-	(Recommended) Install the complete SciTE Editor
-	To be able to see Console logging in real time : Browse to "C:\Program Files (x86)\AutoIt3\SciTE\SciTE.exe" / Right-Click -> Properties -> Compatibility -> Run as Admin
+	git clone rcmaehl/LinuxLiveUSBCreator
+	Intall the latest AutoIt Version (https://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/autoit-v3-setup.exe)
+	(Recommended) Install the complete SciTE Editor (https://www.autoitscript.com/cgi-bin/getfile.pl?../autoit3/scite/download/SciTE4AutoIt3.exe)
+	Run SciTE as Administrator to be able to see logging
 	Navigate to sources/lili/
-	Open "LiLi USB Creator.au3" and press F5 to give it a go
+	Open "LiLi USB Creator.au3" and press F7 to compile
 
 #ce/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
