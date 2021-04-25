@@ -7,7 +7,8 @@
 
 # Linux Live USB Creator
 A fork of Thibaut Lauzièr's Linux Live USB Creator, obtained from http://www.linuxliveusb.com/en/about/sources
-![image](https://user-images.githubusercontent.com/716581/115981054-1358e080-a55f-11eb-9450-93f93ac25b5e.png)
+![image](https://user-images.githubusercontent.com/716581/115993631-a286e800-a5a1-11eb-8b85-e566a2609c01.png)
+
 
 
 ## Goals
