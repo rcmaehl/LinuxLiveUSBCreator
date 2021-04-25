@@ -18,6 +18,8 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
 - [ ] Improve distro compatibility
     - [ ] Use common download paths to allow any common distro to be downloaded
     - [ ] Use common locations of CRC/SHA values to validate downloads instead of hard coded values
-- [x] Improve Windows 10 handling
+- [ ] Improve Windows 10 handling
+    - [x] Update @OSVersion calls
+    - [ ] Check for other jiggery pokery
 - [ ] Update updater check GitHub for updates
 - [x] Update contact information within files to not bother the old developer
