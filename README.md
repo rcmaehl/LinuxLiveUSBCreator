@@ -6,7 +6,7 @@
 
 
 # LinuxLiveUSBCreator
-A fork of Thibaut Lauzièr's Linux Live USB Creator
+A fork of Thibaut Lauzièr's Linux Live USB Creator, obtained from http://www.linuxliveusb.com/en/about/sources
 
 This project aims to bring bug fixes and improvements to Linux Live USB Creator. The following are changes I've made or likely to make. Feedback is appreciated within the discord server linked above.
 
