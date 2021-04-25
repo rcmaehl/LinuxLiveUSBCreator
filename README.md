@@ -27,8 +27,14 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
 - [ ] Improve error messages (e.g. Drive free space insuffient)
     - [ ] Improve translations (e.g. spaces between sentences and punctuation)
 - [ ] Improve distro compatibility
+    - [ ] Add torrent file fetching for distro downloading
     - [ ] Use common download paths to allow any common distro to be downloaded
-    - [ ] Use common locations of CRC/SHA values to validate downloads instead of hard coded values
+    - [ ] Use common locations of CRC/SHA values to validate downloads instead of hard coded values (#1)
+        - [ ] Validate SHA values using their GPG keys (if available)
+            - [ ] Warn but allow continuation if offline
+            - [ ] Warn but allow continuation if no GPG verification
+            - [ ] Warn but DO NOT allow continuation if SHA and ISO do not match
+            - [ ] Warn but DO NOT allow continuation if SHA and GPG key do not match
 - [ ] Improve Windows 10 handling
     - [x] Update @OSVersion calls
     - [ ] Check for other issues/conflicts
