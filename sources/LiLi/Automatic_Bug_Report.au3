@@ -231,7 +231,7 @@ EndFunc
 ; sending the Crash report using Github
 Func SendCrashReport()
 
-	ShellExecute("https://github.com/rcmaehl/LinuxLiveUSBCreator/issues/new?body=Automatic+Bug+Report%0A" &_
+	ShellExecute("https://github.com/rcmaehl/LinuxLiveUSBCreator/issues/new?body=Automatic+Bug+Report%0A" & _
 	"%0A" & _
 	"REPORTER_ID: " & ReadSetting( "General", "unique_ID") & "%0A" & _
 	"ERROR_MSG " & $sErrorMsg & "%0A" & _
