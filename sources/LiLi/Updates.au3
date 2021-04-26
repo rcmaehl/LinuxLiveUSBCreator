@@ -2,7 +2,7 @@
 ; ///////////////////////////////// New Update Checker                            ///////////////////////////////////////////////////////////////////////////////
 ; ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Func _GetLatestRelease($sCurrent)
+Func _GetLatestRelease($sCurrent, $bBeta = False)
 
 	Local $dAPIBin
 	Local $sAPIJSON
@@ -26,29 +26,6 @@ Func _GetLatestRelease($sCurrent)
 	Return _VersionCompare($aCombined[0][0], $sCurrent)
 
 EndFunc
-
-Switch _GetLatestRelease(GetDisplayVersion())
-	Case -1
-		MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Test Build?", "You're running a newer build than publically available!", 10)
-	Case 0
-		Switch @error
-			Case 0
-				MsgBox($MB_OK+$MB_ICONINFORMATION+$MB_TOPMOST, "Up to Date", "You're running the latest build!", 10)
-			Case 1
-				MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Unable to Check for Updates", "Unable to load release data.", 10)
-			Case 2
-				MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Unable to Check for Updates", "Invalid Data Received!", 10)
-			Case 3
-				Switch @extended
-					Case 0
-						MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Unable to Check for Updates", "Invalid Release Tags Received!", 10)
-					Case 1
-						MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Unable to Check for Updates", "Invalid Release Types Received!", 10)
-				EndSwitch
-		EndSwitch
-	Case 1
-		If MsgBox($MB_YESNO+$MB_ICONINFORMATION+$MB_TOPMOST, "Update Available", "An Update is Availabe, would you like to download it?", 10) = $IDYES Then ShellExecute("https://fcofix.org/LinuxLiveUSBCreator/releases")
-EndSwitch
 
 ; ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ; ///////////////////////////////// Updates management                            ///////////////////////////////////////////////////////////////////////////////
@@ -109,7 +86,30 @@ Func CheckForSoftwareUpdate()
 	if $last_stable="" OR $last_beta="" Then Return 0
 
 	$DISPLAY_VERSION=GetDisplayVersion()
-
+#cs
+	Switch _GetLatestRelease(GetDisplayVersion())
+		Case -1
+			MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Test Build?", "You're running a newer build than publically available!", 10)
+		Case 0
+			Switch @error
+				Case 0
+					MsgBox($MB_OK+$MB_ICONINFORMATION+$MB_TOPMOST, "Up to Date", "You're running the latest build!", 10)
+				Case 1
+					MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Unable to Check for Updates", "Unable to load release data.", 10)
+				Case 2
+					MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Unable to Check for Updates", "Invalid Data Received!", 10)
+				Case 3
+					Switch @extended
+						Case 0
+							MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Unable to Check for Updates", "Invalid Release Tags Received!", 10)
+						Case 1
+							MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Unable to Check for Updates", "Invalid Release Types Received!", 10)
+					EndSwitch
+			EndSwitch
+		Case 1
+			If MsgBox($MB_YESNO+$MB_ICONINFORMATION+$MB_TOPMOST, Translate("Your LiLi's version is not up to date"), Translate("Last version is") & ": " & $last_stable & @CRLF & Translate("Your version is") & ": " & $software_version & @CRLF & @CRLF & Translate("Do you want to download it")& "?"), 10) = $IDYES Then ShellExecute("https://fcofix.org/LinuxLiveUSBCreator/releases")
+	EndSwitch
+#ce
 	; Checking for software update
 	if (ReadSetting( "Updates", "check_for_beta_versions") = "yes") AND VersionCompare($last_beta, $DISPLAY_VERSION) = 1  And Not $last_beta ="" Then
 		UpdateLog("New beta version available")

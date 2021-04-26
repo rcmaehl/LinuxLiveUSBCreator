@@ -240,7 +240,7 @@ Func SendCrashReport()
 	"ARCH " & @OSArch & "%0A" & _
 	"SERVICE_PACK " & @OSServicePack & "%0A" & _
 	"LANGUAGE " & _Language_for_stats() & "%0A" & _
-	"TEN_LAST_ACTIONS " & _ArrayToString($last_actions, & "%0A--> ") & "%0A" & _
+	"TEN_LAST_ACTIONS " & _ArrayToString($last_actions, "%0A--> ") & "%0A" & _
 	"LAST_CONFIG " & $last_config & "%0A" & _
 	"PROBLEM_DETAILS " & GUICtrlRead($problem_details) & "%0A" & _
 	"EMAIL_ADDRESS " & GUICtrlRead($email_address) & "%0A")

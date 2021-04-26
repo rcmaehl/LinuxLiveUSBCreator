@@ -64,6 +64,8 @@ Compiled with    : AutoIT v3.3.14.5
 #NoTrayIcon
 #RequireAdmin
 
+HotKeySet("{PAUSE}", "_OnAutoItError")
+
 ; Required for the Automatic Bug Reporting process
 #pragma compile(AutoItExecuteAllowed, True)
 
@@ -72,7 +74,7 @@ Compiled with    : AutoIT v3.3.14.5
 #AutoIt3Wrapper_UseUpx=n
 #AutoIt3Wrapper_Res_Comment=Enjoy !
 #AutoIt3Wrapper_Res_Description=Easily create a Linux Live USB
-#AutoIt3Wrapper_Res_Fileversion=2.9.88.96
+#AutoIt3Wrapper_Res_Fileversion=2.9.88.97
 #AutoIt3Wrapper_Res_Fileversion_AutoIncrement=Y
 #AutoIt3Wrapper_Res_LegalCopyright=CopyLeft Robert Maehl + Thibaut Lauziere a.k.a Slÿm
 #AutoIt3Wrapper_Res_SaveSource=y
@@ -103,8 +105,8 @@ Compiled with    : AutoIT v3.3.14.5
 #AutoIt3Wrapper_Res_File_Add=..\..\tools\img\back.png, RT_RCDATA, PNG_18, 0
 #AutoIt3Wrapper_Res_File_Add=..\..\tools\img\back_hover.png, RT_RCDATA, PNG_19, 0
 #AutoIt3Wrapper_Res_File_Add=..\..\tools\img\gui.png, RT_RCDATA, PNG_20, 0
-#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\progress_background.png, RT_RCDATA, progress_background, 0
-#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\progress_green.png, RT_RCDATA, progress_green, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\progress_background.jpg, RT_RCDATA, progress_background, 0
+#AutoIt3Wrapper_Res_File_Add=..\..\tools\img\progress_green.jpg, RT_RCDATA, progress_green, 0
 #AutoIt3Wrapper_Res_File_Add=..\..\tools\img\lili.ico, RT_RCDATA, ICO_1, 0
 #AutoIt3Wrapper_Res_Icon_Add=..\..\tools\img\lili.ico
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
