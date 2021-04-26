@@ -31,12 +31,9 @@ jobs:
       run: |
            cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe
            mkdir build
-           .\Aut2exe.exe /in "sources\LiLi\LiLi USB Creator.au3" /out build\LiLiUSBCreator$ver.exe /nopack /icon tools\img\lili.ico /comp 4 /x64
-           dir
+           ./Aut2exe.exe /in "sources\LiLi\LiLi USB Creator.au3" /out build\LiLiUSBCreator$ver.exe /nopack /icon tools\img\lili.ico /comp 4 /x64
+           Start-Sleep -s 10
            Move-Item tools build
-           dir
-           cd build
-           dir
     - name: Upload
       uses: actions/upload-artifact@v2
       with:
