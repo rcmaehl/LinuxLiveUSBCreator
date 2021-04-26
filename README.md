@@ -29,6 +29,7 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
 - [ ] Improve distro compatibility
     - [ ] Add popular distros that may not have been listed
         - [ ] If possible, list popular distros from TorrentWatch/Other Service automatically
+            - [ ] "Surprise Me" Style Install Option for a random distro??? (**Feedback Wanted**)
     - [ ] Add torrent file fetching for distro downloading
     - [ ] Include information such as syslinux versions in a definitions file
         - [ ] Allow defintions file to be updated/downloaded separately
@@ -37,7 +38,7 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
         - [ ] Validate SHA values using their GPG keys (if available)
             - [ ] Warn but allow continuation if offline
             - [ ] Warn but allow continuation if no GPG verification
-            - [ ] Warn but DO NOT allow continuation if SHA and ISO do not match
+            - [ ] Warn but DO NOT allow continuation if SHA and ISO do not match (**Feedback Wanted**)
             - [ ] Warn but DO NOT allow continuation if SHA and GPG key do not match
 - [ ] Improve Windows 10 handling
     - [x] Update @OSVersion calls
