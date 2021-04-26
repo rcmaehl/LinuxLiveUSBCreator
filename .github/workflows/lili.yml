@@ -32,7 +32,9 @@ jobs:
            $ver= git describe --always
            mkdir build
            ./Aut2exe.exe /in "sources\LiLi\LiLi USB Creator.au3" /out "build\LiLi USB Creator"$ver.exe /nopack /icon tools\img\lili.ico /comp 4 /x64
+           dir
            Move-Item tools build
+           dir
            cd build
            dir
     - name: Upload
