@@ -41,5 +41,5 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
        name: LinuxLiveUSBCreator
-       path: C:\Program Files (x86)\AutoIt3\Aut2Exe\LinuxLiveUSBCreator\build
+       path: C:\Program Files (x86)\AutoIt3\Aut2Exe\build
        if-no-files-found: error
