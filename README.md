@@ -36,6 +36,7 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
 - [ ] Update contact information within files to not bother the old developer
     - [x] Convert Emails to Discord Links
     - [ ] Have bug reports generate a github issue
+        - [ ] Simplify bug reporter (A program instance is not needed)
 
 #### ---3.0---
 - [ ] Improve distro compatibility
