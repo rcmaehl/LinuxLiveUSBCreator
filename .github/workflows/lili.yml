@@ -21,17 +21,24 @@ jobs:
            cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe
            git clone https://github.com/rcmaehl/LinuxLiveUSBCreator
            cd LinuxLiveUSBCreator
-           $ver= git describe --always
            Move-Item * ..
     - name: Install Autoit Code Stripper
       run: |
            Invoke-WebRequest -Uri https://www.autoitscript.com/autoit3/scite/download/Au3Stripper.zip -OutFile Au3Stripper.zip
            Expand-Archive -Force .\Au3Stripper.zip C:\"Program Files (x86)"\AutoIt3\Aut2Exe\
+    - name: Wrap Code
+      run: |
+           cd C:\"Program Files (x86)"\AutoIt3
+           ./AutoIt3.exe "C:\Program Files (x86)\AutoIt3\SciTE\AutoIt3Wrapper\AutoIt3Wrapper.au3" /NoStatus /prod /in "C:\Program Files (x86)\AutoIt3\Aut2Exe\sources\LiLi\LiLi USB Creator.au3"
+           Start-Sleep -s 10
     - name: Compile
       run: |
            cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe
+           cd LinuxLiveUSBCreator
+           $ver= git rev-list --count HEAD
+           cd ..
            mkdir build
-           ./Aut2exe.exe /in "sources\LiLi\LiLi USB Creator.au3" /out build\LiLiUSBCreator$ver.exe /nopack /icon tools\img\lili.ico /comp 4 /x64
+           ./Aut2exe.exe /in "sources\LiLi\LiLi USB Creator.au3" /out build\LiLiUSBCreator-2.10alpha$ver.exe /nopack /icon tools\img\lili.ico /comp 4 /x64
            Start-Sleep -s 10
            Move-Item tools build
     - name: Upload

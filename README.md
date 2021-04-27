@@ -13,6 +13,9 @@ A fork of Thibaut Lauzièr's Linux Live USB Creator, obtained from http://www.li
 ## Goals
 This project aims to bring bug fixes and improvements to Linux Live USB Creator. The following are changes I've made or likely to make. Feedback is appreciated within the discord server linked above.
 
+### Roadmap
+
+#### ---2.10---
 - [ ] Improve executiable resources to allow LiLi to be a single executible instead of an executible and extra files.
     - [x] Convert GUI Image creation calls to detect if compiled and use internal resources from #AutoIt3Wrapper_Res_Icon_Add / #AutoIt3Wrapper_Res_File_Add
         - [x] GUICtrlCreateGraphic / GUICtrlSetGraphic
@@ -26,6 +29,16 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
     - [ ] FileInstall or FileWrite needed .cfg files
 - [ ] Improve error messages (e.g. Drive free space insuffient)
     - [ ] Improve translations (e.g. spaces between sentences and punctuation)
+- [ ] Improve Windows 10 handling
+    - [x] Update @OSVersion calls
+    - [ ] Check for other issues/conflicts
+- [ ] Update updater check GitHub for updates
+- [ ] Update contact information within files to not bother the old developer
+    - [x] Convert Emails to Discord Links
+    - [ ] Have bug reports generate a github issue
+        - [ ] Simplify bug reporter (A program instance is not needed)
+
+#### ---3.0---
 - [ ] Improve distro compatibility
     - [ ] Add popular distros that may not have been listed
         - [ ] If possible, list popular distros from TorrentWatch/Other Service automatically
@@ -40,13 +53,6 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
             - [ ] Warn but allow continuation if no GPG verification
             - [ ] Warn but DO NOT allow continuation if SHA and ISO do not match (**Feedback Wanted**)
             - [ ] Warn but DO NOT allow continuation if SHA and GPG key do not match
-- [ ] Improve Windows 10 handling
-    - [x] Update @OSVersion calls
-    - [ ] Check for other issues/conflicts
-- [ ] Update updater check GitHub for updates
-- [ ] Update contact information within files to not bother the old developer
-    - [x] Convert Emails to Discord Links
-    - [ ] Have bug reports generate a github issue
 
 ## Compiling from Source
 
