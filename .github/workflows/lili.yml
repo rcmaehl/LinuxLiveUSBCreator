@@ -42,7 +42,7 @@ jobs:
            cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe
            Move-Item LinuxLiveUSBCreator\tools build
            cd build
-           rename "LiLi USB Creator.exe" LiLiUSBCreator-2.10alpha$ver.exe
+           Rename-Item -Path "LiLi USB Creator.exe" -NewName LiLiUSBCreator-2.10alpha$ver.exe
            Start-Sleep -s 10
     - name: Upload
       uses: actions/upload-artifact@v2
