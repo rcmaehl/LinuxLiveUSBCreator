@@ -43,7 +43,6 @@ jobs:
            Move-Item LinuxLiveUSBCreator\tools build
            cd build
            Rename-Item -Path "LiLi USB Creator.exe" -NewName LiLiUSBCreator-2.10alpha$ver.exe
-           Start-Sleep -s 10
     - name: Upload
       uses: actions/upload-artifact@v2
       with:
