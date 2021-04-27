@@ -39,11 +39,13 @@ jobs:
            Start-Sleep -s 10
     - name: Compile
       run: |
-           cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe\LinuxLiveUSBCreator
-           $ver= git rev-list --count HEAD
-           cd ..           
+           cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe
            mkdir build
-           ./Aut2exe.exe /in "LinuxLiveUSBCreator\sources\LiLi\LiLi USB Creator.au3" /out build\LiLiUSBCreator-2.10alpha$ver.exe /nopack /icon tools\img\lili.ico /comp 4 /x64
+           cd LinuxLiveUSBCreator
+           $ver= git rev-list --count HEAD
+           cd Sources\LiLi
+           ../../../Aut2exe.exe /in "LinuxLiveUSBCreator\sources\LiLi\LiLi USB Creator.au3" /out ..\..\..\build\LiLiUSBCreator-2.10alpha$ver.exe /nopack /icon tools\img\lili.ico /comp 4 /x64
+           cd ..\..\..
            Move-Item LinuxLiveUSBCreator\tools build
     - name: Compile Sleep 2
       run: |
