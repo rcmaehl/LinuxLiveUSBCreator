@@ -240,7 +240,7 @@ Func SendCrashReport()
 	"~~~%0AVERSION:%20" & $software_version & "%0A" & _
 	"ENVIRONMENT:%20" & @OSVersion & "%20" & @OSArch & "%20" & @OSServicePack & "%0A" & _
 	"LAST ACTIONS:%20%0A%20*%20" & _ArrayToString($last_actions, "%0A%20*%20") & "%0A~~~%0A" & _
-	"EMAIL ADDRESS:%20" & URLEncode(GUICtrlRead($email_address)))
+	"**Email:**%20" & URLEncode(GUICtrlRead($email_address)))
 
 	#cs
 	$hw_open = _WinHttpOpen()
