@@ -64,8 +64,6 @@ Compiled with    : AutoIT v3.3.14.5
 #NoTrayIcon
 #RequireAdmin
 
-HotKeySet("{PAUSE}", "_OnAutoItError")
-
 ; Required for the Automatic Bug Reporting process
 #pragma compile(AutoItExecuteAllowed, True)
 
@@ -74,7 +72,7 @@ HotKeySet("{PAUSE}", "_OnAutoItError")
 #AutoIt3Wrapper_UseUpx=n
 #AutoIt3Wrapper_Res_Comment=Enjoy !
 #AutoIt3Wrapper_Res_Description=Easily create a Linux Live USB
-#AutoIt3Wrapper_Res_Fileversion=2.9.88.98
+#AutoIt3Wrapper_Res_Fileversion=2.9.88.100
 #AutoIt3Wrapper_Res_Fileversion_AutoIncrement=Y
 #AutoIt3Wrapper_Res_LegalCopyright=CopyLeft Robert Maehl + Thibaut Lauziere a.k.a Slÿm
 #AutoIt3Wrapper_Res_SaveSource=y

@@ -231,19 +231,16 @@ EndFunc
 ; sending the Crash report using Github
 Func SendCrashReport()
 
-	ShellExecute("https://github.com/rcmaehl/LinuxLiveUSBCreator/issues/new?body=Automatic+Bug+Report%0A" & _
+	_ArrayRemoveBlanks($last_actions)
+
+	ShellExecute("https://github.com/rcmaehl/LinuxLiveUSBCreator/issues/new?body=%23%20Automatic+Bug+Report%0A" & _
 	"%0A" & _
-	"REPORTER_ID: " & ReadSetting( "General", "unique_ID") & "%0A" & _
-	"ERROR_MSG " & $sErrorMsg & "%0A" & _
-	"SOFTWARE_VERSION " & $software_version & "%0A" & _
-	"OS_VERSION " & @OSVersion & "%0A" & _
-	"ARCH " & @OSArch & "%0A" & _
-	"SERVICE_PACK " & @OSServicePack & "%0A" & _
-	"LANGUAGE " & _Language_for_stats() & "%0A" & _
-	"TEN_LAST_ACTIONS " & _ArrayToString($last_actions, "%0A--> ") & "%0A" & _
-	"LAST_CONFIG " & $last_config & "%0A" & _
-	"PROBLEM_DETAILS " & GUICtrlRead($problem_details) & "%0A" & _
-	"EMAIL_ADDRESS " & GUICtrlRead($email_address) & "%0A")
+	"~~~%0A" & URLEncode($sErrorMsg) & "~~~%0A" & _
+	"**Details:**%20" & URLEncode(GUICtrlRead($problem_details)) & "%0A" & _
+	"~~~%0AVERSION:%20" & $software_version & "%0A" & _
+	"ENVIRONMENT:%20" & @OSVersion & "%20" & @OSArch & "%20" & @OSServicePack & "%0A" & _
+	"LAST ACTIONS:%20%0A%20*%20" & _ArrayToString($last_actions, "%0A%20*%20") & "%0A~~~%0A" & _
+	"EMAIL ADDRESS:%20" & URLEncode(GUICtrlRead($email_address)))
 
 	#cs
 	$hw_open = _WinHttpOpen()
@@ -723,3 +720,31 @@ Func CallBack_Exit()
 	EndIf
 EndFunc
 
+Func _ArrayRemoveBlanks(ByRef $arr)
+  $idx = 0
+  For $i = 0 To UBound($arr) - 1
+    If $arr[$i] <> "" Then
+      $arr[$idx] = $arr[$i]
+      $idx += 1
+    EndIf
+  Next
+  ReDim $arr[$idx]
+EndFunc ;==>_ArryRemoveBlanks
+
+Func URLEncode($urlText)
+    $url = ""
+    For $i = 1 To StringLen($urlText)
+        $acode = Asc(StringMid($urlText, $i, 1))
+        Select
+            Case ($acode >= 48 And $acode <= 57) Or _
+                    ($acode >= 65 And $acode <= 90) Or _
+                    ($acode >= 97 And $acode <= 122)
+                $url = $url & StringMid($urlText, $i, 1)
+            Case $acode = 32
+                $url = $url & "+"
+            Case Else
+                $url = $url & "%" & Hex($acode, 2)
+        EndSelect
+    Next
+    Return $url
+EndFunc   ;==>URLEncode
