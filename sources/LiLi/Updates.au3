@@ -12,9 +12,9 @@ Func _GetLatestRelease($sCurrent, $bBeta = False)
 	$sAPIJSON = BinaryToString($dAPIBin)
 	If @error Then Return SetError(2, 0, 0)
 
-	Local $aReleases = _StringBetween($sAPIJSON, '"tag_name":"', '",')
+	Local $aReleases = _StringBetween($sAPIJSON, '"tag_name": "', '",')
 	If @error Then Return SetError(3, 0, 0)
-	Local $aRelTypes = _StringBetween($sAPIJSON, '"prerelease":', ',')
+	Local $aRelTypes = _StringBetween($sAPIJSON, '"prerelease": ', ',')
 	If @error Then Return SetError(3, 1, 0)
 	Local $aCombined[UBound($aReleases)][2]
 
@@ -23,7 +23,14 @@ Func _GetLatestRelease($sCurrent, $bBeta = False)
 		$aCombined[$iLoop][1] = $aRelTypes[$iLoop]
 	Next
 
-	Return _VersionCompare($aCombined[0][0], $sCurrent)
+	If $bBeta Then
+		Return _VersionCompare($aCombined[0][0], $sCurrent)
+	Else
+		For $iLoop = 0 To UBound($aReleases) - 1 Step 1
+			If $aCombined[$iLoop][1] = "true" Then ContinueLoop
+			Return _VersionCompare($aCombined[$iLoop][0], $sCurrent)
+		Next
+	EndIf
 
 EndFunc
 
@@ -83,33 +90,41 @@ EndFunc
 
 ; Check for LiLi's updates
 Func CheckForSoftwareUpdate()
-	if $last_stable="" OR $last_beta="" Then Return 0
+	If $last_stable = "" Or $last_beta = "" Then Return 0
 
-	$DISPLAY_VERSION=GetDisplayVersion()
-#cs
-	Switch _GetLatestRelease(GetDisplayVersion())
+	$DISPLAY_VERSION = GetDisplayVersion()
+
+	Switch _GetLatestRelease(GetDisplayVersion(), ReadSetting("Updates", "check_for_beta_versions") = "yes")
 		Case -1
-			MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Test Build?", "You're running a newer build than publically available!", 10)
+			; MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Test Build?", "You're running a newer build than publically available!", 10)
+			Return 0
 		Case 0
 			Switch @error
 				Case 0
-					MsgBox($MB_OK+$MB_ICONINFORMATION+$MB_TOPMOST, "Up to Date", "You're running the latest build!", 10)
+					; MsgBox($MB_OK+$MB_ICONINFORMATION+$MB_TOPMOST, "Up to Date", "You're running the latest build!", 10)
+					UpdateLog("Current software version is up to date")
 				Case 1
-					MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Unable to Check for Updates", "Unable to load release data.", 10)
+					; MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Unable to Check for Updates", "Unable to load release data.", 10)
 				Case 2
-					MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Unable to Check for Updates", "Invalid Data Received!", 10)
+					; MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Unable to Check for Updates", "Invalid Data Received!", 10)
 				Case 3
 					Switch @extended
 						Case 0
-							MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Unable to Check for Updates", "Invalid Release Tags Received!", 10)
+							; MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Unable to Check for Updates", "Invalid Release Tags Received!", 10)
 						Case 1
-							MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Unable to Check for Updates", "Invalid Release Types Received!", 10)
+							; MsgBox($MB_OK+$MB_ICONWARNING+$MB_TOPMOST, "Unable to Check for Updates", "Invalid Release Types Received!", 10)
 					EndSwitch
 			EndSwitch
+			Return 0
 		Case 1
-			If MsgBox($MB_YESNO+$MB_ICONINFORMATION+$MB_TOPMOST, Translate("Your LiLi's version is not up to date"), Translate("Last version is") & ": " & $last_stable & @CRLF & Translate("Your version is") & ": " & $software_version & @CRLF & @CRLF & Translate("Do you want to download it")& "?"), 10) = $IDYES Then ShellExecute("https://fcofix.org/LinuxLiveUSBCreator/releases")
+			UpdateLog("New version available")
+			If MsgBox($MB_YESNO+$MB_ICONINFORMATION+$MB_TOPMOST, Translate("Your LiLi's version is not up to date"), Translate("Do you want to download it")& "?", 10) = $IDYES Then
+				ShellExecute("https://fcofix.org/LinuxLiveUSBCreator/releases")
+				GUI_Exit()
+			EndIf
+			Return 1
 	EndSwitch
-#ce
+#cs
 	; Checking for software update
 	if (ReadSetting( "Updates", "check_for_beta_versions") = "yes") AND VersionCompare($last_beta, $DISPLAY_VERSION) = 1  And Not $last_beta ="" Then
 		UpdateLog("New beta version available")
@@ -131,6 +146,7 @@ Func CheckForSoftwareUpdate()
 		UpdateLog("Current software version is up to date")
 		Return 0
 	EndIf
+#ce
 EndFunc   ;==>Check_for_updates
 
 
