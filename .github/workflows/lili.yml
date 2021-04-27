@@ -32,8 +32,8 @@ jobs:
            Start-Sleep -s 10
     - name: Wrap Code
       run: |
-           cd C:\"Program Files (x86)"\AutoIt3
-           ./AutoIt3.exe "C:\Program Files (x86)\AutoIt3\SciTE\AutoIt3Wrapper\AutoIt3Wrapper.au3" /NoStatus /prod /in "C:\Program Files (x86)\AutoIt3\Aut2Exe\LinuxLiveUSBCreator\sources\LiLi\LiLi USB Creator.au3"
+           cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe\LinuxLiveUSBCreator\sources\LiLi\
+           ../../../../AutoIt3.exe "C:\Program Files (x86)\AutoIt3\SciTE\AutoIt3Wrapper\AutoIt3Wrapper.au3" /NoStatus /prod /in "C:\Program Files (x86)\AutoIt3\Aut2Exe\LinuxLiveUSBCreator\sources\LiLi\LiLi USB Creator.au3"
     - name: Compile Sleep 1
       run: |
            Start-Sleep -s 10
