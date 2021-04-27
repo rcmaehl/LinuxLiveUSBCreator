@@ -16,6 +16,7 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
 ### Roadmap
 
 #### ---2.10---
+- [x] Get CI working for dev builds
 - [ ] Improve executiable resources to allow LiLi to be a single executible instead of an executible and extra files.
     - [x] Convert GUI Image creation calls to detect if compiled and use internal resources from #AutoIt3Wrapper_Res_Icon_Add / #AutoIt3Wrapper_Res_File_Add
         - [x] GUICtrlCreateGraphic / GUICtrlSetGraphic
