@@ -43,7 +43,7 @@ jobs:
            mkdir build
            C:\"Program Files (x86)"\AutoIt3\Aut2Exe\LinuxLiveUSBCreator
            $ver= git rev-list --count HEAD
-           C:\"Program Files (x86)"\AutoIt3\Aut2Exe\LinuxLiveUSBCreator\Sources\LiLi
+           cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe\LinuxLiveUSBCreator\Sources\LiLi
            dir ../../..
            ../../../Aut2exe.exe /in "LinuxLiveUSBCreator\sources\LiLi\LiLi USB Creator.au3" /out ..\..\..\build\LiLiUSBCreator-2.10alpha$ver.exe /nopack /icon tools\img\lili.ico /comp 4 /x64
            cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe
