@@ -27,16 +27,21 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
         - [x] _GDIPlus_ImageLoadFromFile
     - [x] Add Themeing ability back by detecting a /theme/ directory, or similar
     - [ ] FileInstall or FileWrite needed .cfg files
-- [ ] Improve error messages (e.g. Drive free space insuffient)
+- [ ] Improve messages
+    - [ ] Improve errors (e.g. Drive free space insuffient)
+    - [ ] Improve logging (e.g. Log more events)
     - [ ] Improve translations (e.g. spaces between sentences and punctuation)
+    - [ ] Update Translations (***LAST STEP BEFORE RELEASE***)
 - [ ] Improve Windows 10 handling
     - [x] Update @OSVersion calls
     - [ ] Check for other issues/conflicts
-- [ ] Update updater check GitHub for updates
+- [x] Update updater check GitHub for updates
+    - [x] Check for Releases
+    - [x] Check for Pre-Releases
 - [ ] Update contact information within files to not bother the old developer
     - [x] Convert Emails to Discord Links
-    - [ ] Have bug reports generate a github issue
-        - [ ] Simplify bug reporter (A program instance is not needed)
+    - [x] Have bug reports generate a github issue
+    - [ ] Simplify bug reporter (A new program instance is likely not needed)
 
 #### ---3.0---
 - [ ] Improve distro compatibility
