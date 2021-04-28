@@ -26,6 +26,7 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
         - [x] GUISetIcon
         - [x] TraySetIcon / TraySetPauseIcon
         - [x] _GDIPlus_ImageLoadFromFile
+    - [ ] Convert HotKeySet to GUISetAccelerators to not hijack entire keys permanently
     - [x] Add Themeing ability back by detecting a /theme/ directory, or similar
     - [ ] FileInstall or FileWrite needed .cfg files
     - [ ] Update tools in tools folder
