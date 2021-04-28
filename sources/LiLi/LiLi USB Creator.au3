@@ -72,7 +72,7 @@ Compiled with    : AutoIT v3.3.14.5
 #AutoIt3Wrapper_UseUpx=n
 #AutoIt3Wrapper_Res_Comment=Enjoy !
 #AutoIt3Wrapper_Res_Description=Easily create a Linux Live USB
-#AutoIt3Wrapper_Res_Fileversion=2.9.88.100
+#AutoIt3Wrapper_Res_Fileversion=2.9.88.102
 #AutoIt3Wrapper_Res_Fileversion_AutoIncrement=Y
 #AutoIt3Wrapper_Res_LegalCopyright=CopyLeft Robert Maehl + Thibaut Lauziere a.k.a Slÿm
 #AutoIt3Wrapper_Res_SaveSource=y
@@ -343,6 +343,7 @@ EndIf
 #include <GUIImageList.au3>
 #include <GUIConstants.au3>
 #include <EditConstants.au3>
+#include <FileConstants.au3>
 #include <GUIConstantsEx.au3>
 #include <ComboConstants.au3>
 #include <ButtonConstants.au3>
@@ -372,7 +373,6 @@ EndIf
 #include "VirtualBox.au3"
 ; Too early => crashes on Vista
 ; #include "ITaskBarList.au3"
-
 
 
 $DISPLAY_VERSION = GetDisplayVersion()
@@ -624,16 +624,16 @@ GUICtrlSetBkColor(-1, $GUI_BKCOLOR_TRANSPARENT)
 GUICtrlSetColor(-1, 0xFFFFFF)
 GUICtrlSetFont(-1, $font_size + 1.5, 400, 0, "Tahoma")
 
-$label_iso = GUICtrlCreateLabel("ISO / IMG / ZIP", 40 + $offsetx0, 302 + $offsety0, 110, 50)
+$label_iso = GUICtrlCreateLabel("ISO / IMG / ZIP", 40 + $offsetx0, 302 + $offsety0, 110, 20)
 GUICtrlSetBkColor(-1, $GUI_BKCOLOR_TRANSPARENT)
 GUICtrlSetColor(-1, 0xFFFFFF)
 
 
-$label_cd = GUICtrlCreateLabel("CD", 175 + $offsetx0, 302 + $offsety0, 40, 50)
+$label_cd = GUICtrlCreateLabel("CD", 175 + $offsetx0, 302 + $offsety0, 20, 20, $SS_CENTER)
 GUICtrlSetBkColor(-1, $GUI_BKCOLOR_TRANSPARENT)
 GUICtrlSetColor(-1, 0xFFFFFF)
 
-$label_download = GUICtrlCreateLabel(Translate("Download"), 262 + $offsetx0, 302 + $offsety0, 70, 20)
+$label_download = GUICtrlCreateLabel(Translate("Download"), 262 + $offsetx0, 302 + $offsety0, 70, 20, $SS_CENTER)
 GUICtrlSetBkColor(-1, $GUI_BKCOLOR_TRANSPARENT)
 GUICtrlSetColor(-1, 0xFFFFFF)
 
