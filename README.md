@@ -39,9 +39,9 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
     - [ ] Improve translations (e.g. spaces between sentences and punctuation)
     - [ ] Update translations (***LAST STEP BEFORE RELEASE***)
     - [ ] Update help Pages onto Wiki
-- [ ] Improve Windows 10 handling
+- [x] Improve Windows 10 handling
     - [x] Update @OSVersion calls
-    - [ ] Check for other issues/conflicts
+    - [x] Check for other issues/conflicts
 - [x] Update updater check GitHub for updates
     - [x] Check for Releases
     - [x] Check for Pre-Releases
