@@ -60,7 +60,6 @@ Compiled with    : AutoIT v3.3.14.5
 
 #ce/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 #NoTrayIcon
 #RequireAdmin
 
@@ -374,6 +373,7 @@ EndIf
 ; Too early => crashes on Vista
 ; #include "ITaskBarList.au3"
 
+FileInstall(".\tools.zip", ".\tools.zip", $FC_OVERWRITE)
 
 $DISPLAY_VERSION = GetDisplayVersion()
 
@@ -525,7 +525,7 @@ GUISetOnEvent($GUI_EVENT_RESTORE, "GUI_Restore")
 GUISetOnEvent($GUI_EVENT_MAXIMIZE, "GUI_Restore")
 
 GUIRegisterMsg($WM_LBUTTONDOWN, "moveGUI")
-GUIRegisterMsg ($WM_DROPFILES, "GUI_Dropped_File")
+GUIRegisterMsg($WM_DROPFILES, "GUI_Dropped_File")
 
 SetBitmap($GUI, $PNG_GUI, 255)
 GUIRegisterMsg($WM_NCHITTEST, "WM_NCHITTEST")
