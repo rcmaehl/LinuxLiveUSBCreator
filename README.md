@@ -26,7 +26,7 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
         - [x] GUISetIcon
         - [x] TraySetIcon / TraySetPauseIcon
         - [x] _GDIPlus_ImageLoadFromFile
-    - [ ] Convert HotKeySet to GUISetAccelerators to not hijack entire keys system wide
+    - [ ] ~~Convert HotKeySet to GUISetAccelerators to not hijack entire keys system wide~~ (Not viable at this time.)
     - [x] Add Themeing ability back by detecting a /theme/ directory, or similar
     - [ ] Upscale GUI resources for those on High Scaling, High DPI monitors
     - [ ] FileInstall or FileWrite needed .cfg files
@@ -70,8 +70,8 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
 ## Compiling from Source
 
 * git clone rcmaehl/LinuxLiveUSBCreator
-* Intall the latest AutoIt Version (https://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/autoit-v3-setup.exe)
-* (Recommended) Install the complete SciTE Editor (https://www.autoitscript.com/cgi-bin/getfile.pl?../autoit3/scite/download/SciTE4AutoIt3.exe)
+* Intall the [latest AutoIt Version](https://www.autoitscript.com/cgi-bin/getfile.pl?autoit3/autoit-v3-setup.exe)
+* Install the [complete SciTE Editor](https://www.autoitscript.com/cgi-bin/getfile.pl?../autoit3/scite/download/SciTE4AutoIt3.exe)
 * Run SciTE as Administrator to be able to see logging
 * Navigate to sources/lili/
 * Open "LiLi USB Creator.au3" and press F7 to compile
