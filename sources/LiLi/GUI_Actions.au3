@@ -1082,7 +1082,7 @@ EndFunc   ;==>GUI_Events2
 Func GUI_Help()
 	SendReport("Start-GUI_Help")
 	If WinActive("LinuxLive USB Creator") Or WinActive("LiLi USB Creator") then
-		ShellExecute("http://www.linuxliveusb.com/help")
+		ShellExecute("https://github.com/rcmaehl/LinuxLiveUSBCreator/wiki/Help")
 	EndIf
 	SendReport("End-GUI_Help")
 EndFunc   ;==>GUI_Help_Step1
