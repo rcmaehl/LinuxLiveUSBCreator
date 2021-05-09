@@ -39,7 +39,10 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
     - [ ] Improve logging (e.g. Log more events)
     - [ ] Improve translations (e.g. spaces between sentences and punctuation)
     - [ ] Update translations (***LAST STEP BEFORE RELEASE***)
-    - [ ] Update help Pages onto Wiki
+    - [ ] Create Wiki
+        - [ ] Convert Help & Guide (http://www.linuxliveusb.com/en/help)
+        - [ ] Convert Features (http://www.linuxliveusb.com/en/features)
+        - [ ] Convert Supported Distros (http://www.linuxliveusb.com/en/supported-linuxes)
 - [x] Improve Windows 10 handling
     - [x] Update @OSVersion calls
     - [x] Check for other issues/conflicts
