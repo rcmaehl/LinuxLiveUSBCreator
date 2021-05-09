@@ -40,6 +40,7 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
     - [ ] Improve translations (e.g. spaces between sentences and punctuation)
     - [ ] Update translations (***LAST STEP BEFORE RELEASE***)
     - [ ] Create Wiki
+        - [ ] Convert FAQ (http://www.linuxliveusb.com/en/help/faq)
         - [ ] Convert Help & Guide (http://www.linuxliveusb.com/en/help)
         - [ ] Convert Features (http://www.linuxliveusb.com/en/features)
         - [ ] Convert Supported Distros (http://www.linuxliveusb.com/en/supported-linuxes)
