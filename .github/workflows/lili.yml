@@ -37,6 +37,7 @@ jobs:
            mkdir build
            cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe\LinuxLiveUSBCreator
            $ver= git rev-list --count HEAD
+           Compress-Archive -Path .\tools -Destination .\tools.zip -force
            cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe\LinuxLiveUSBCreator\Sources\LiLi
            Move-Item "LiLi USB Creator.exe" C:\"Program Files (x86)"\AutoIt3\Aut2Exe\build
            cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe
