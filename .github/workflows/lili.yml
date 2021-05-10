@@ -40,13 +40,11 @@ jobs:
            cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe
            mkdir build
            cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe\LinuxLiveUSBCreator
-           Remove-Item C:\"Program Files (x86)"\AutoIt3\Aut2Exe\LinuxLiveUSBCreator\tools -Recurse -Force
            $ver= git rev-list --count HEAD
+           Remove-Item C:\"Program Files (x86)"\AutoIt3\Aut2Exe\LinuxLiveUSBCreator\tools -Recurse -Force
            cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe\LinuxLiveUSBCreator\Sources\LiLi
            Move-Item "LiLi USB Creator.exe" C:\"Program Files (x86)"\AutoIt3\Aut2Exe\build
-           cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe
-           Move-Item LinuxLiveUSBCreator\tools build
-           cd build
+           cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe\build
            Rename-Item -Path "LiLi USB Creator.exe" -NewName LiLiUSBCreator-2.10dev$ver.exe
     - name: Upload
       uses: actions/upload-artifact@v2
