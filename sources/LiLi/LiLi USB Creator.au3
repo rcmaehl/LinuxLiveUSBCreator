@@ -71,7 +71,7 @@ Compiled with    : AutoIT v3.3.14.5
 #AutoIt3Wrapper_UseUpx=n
 #AutoIt3Wrapper_Res_Comment=Enjoy !
 #AutoIt3Wrapper_Res_Description=Easily create a Linux Live USB
-#AutoIt3Wrapper_Res_Fileversion=2.9.88.102
+#AutoIt3Wrapper_Res_Fileversion=2.9.88.103
 #AutoIt3Wrapper_Res_Fileversion_AutoIncrement=Y
 #AutoIt3Wrapper_Res_LegalCopyright=CopyLeft Robert Maehl + Thibaut Lauziere a.k.a Slÿm
 #AutoIt3Wrapper_Res_SaveSource=y
@@ -275,6 +275,8 @@ $version_in_file = "none"
 
 Opt("GUIOnEventMode", 1)
 
+FileInstall("..\..\tools.zip", "tools.zip", $FC_OVERWRITE)
+
 ; ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ; ///////////////////////////////// Checking folders / Set up Anonymous ID and Language                       ///////////////////////////////////////////////////
 ; ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -372,8 +374,6 @@ EndIf
 #include "VirtualBox.au3"
 ; Too early => crashes on Vista
 ; #include "ITaskBarList.au3"
-
-FileInstall(".\tools.zip", ".\tools.zip", $FC_OVERWRITE)
 
 $DISPLAY_VERSION = GetDisplayVersion()
 
