@@ -313,7 +313,7 @@ Opt("GUIOnEventMode", 1)
 
 If DirGetSize(@ScriptDir & "\tools\", 2) = -1 Then
 	FileInstall("..\..\tools.zip", "tools.zip", $FC_OVERWRITE)
-	Unzip(@ScriptDir & "\tools.zip", @ScriptDir & "\tools")
+	Unzip(@ScriptDir & "\tools.zip", @ScriptDir)
 EndIf
 
 ; ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
