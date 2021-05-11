@@ -33,7 +33,7 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
         - [x] Update Executables
         - [x] Update Licenses
         - [ ] Check for incompatibilities/changes
-    - [ ] ~~Convert HotKeySet to GUISetAccelerators to not hijack entire keys system wide~~ (Not viable at this time.)
+- [ ] ~~Convert HotKeySet to GUISetAccelerators to not hijack entire keys system wide~~ (Not viable at this time.)
 - [ ] Improve messages
     - [ ] Improve errors (e.g. Drive free space insuffient)
     - [ ] Improve logging (e.g. Log more events)
