@@ -28,7 +28,7 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
         - [x] _GDIPlus_ImageLoadFromFile
     - [x] Add Themeing ability back by detecting a /theme/ directory, or similar
     - [ ] Upscale GUI resources for those on High Scaling, High DPI monitors
-    - [ ] FileInstall or FileWrite needed .cfg files
+    - [ ] ~~FileInstall or FileWrite needed .cfg files~~ (Included in tools.zip)
     - [ ] Update tools in tools folder
         - [x] Update Executables
         - [x] Update Licenses
