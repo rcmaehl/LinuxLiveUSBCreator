@@ -16,6 +16,9 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
 ### Roadmap
 
 #### ---2.10---
+- [ ] ~~Convert HotKeySet to GUISetAccelerators to not hijack entire keys system wide~~ (Not viable at this time.)
+- [ ] Disable Analytics until GDPR implications can be understood
+    - [ ] Get in contact with an EU Lawyer
 - [x] Get CI working for dev builds
 - [ ] Improve executiable resources to allow LiLi to be a single executible instead of an executible and extra files.
     - [x] Convert GUI Image creation calls to detect if compiled and use internal resources from #AutoIt3Wrapper_Res_Icon_Add / #AutoIt3Wrapper_Res_File_Add
@@ -33,7 +36,6 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
         - [x] Update Executables
         - [x] Update Licenses
         - [ ] Check for incompatibilities/changes
-- [ ] ~~Convert HotKeySet to GUISetAccelerators to not hijack entire keys system wide~~ (Not viable at this time.)
 - [ ] Improve messages
     - [ ] Improve errors (e.g. Drive free space insuffient)
     - [ ] Improve logging (e.g. Log more events)
@@ -47,15 +49,13 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
 - [x] Improve Windows 10 handling
     - [x] Update @OSVersion calls
     - [x] Check for other issues/conflicts
-- [ ] Disable Analytics until GDPR implications can be understood
-    - [ ] Get in contact with an EU Lawyer
-- [x] Update updater check GitHub for updates
-    - [x] Check for Releases
-    - [x] Check for Pre-Releases
 - [ ] Update contact information within files to not bother the old developer
     - [x] Convert Emails to Discord Links
     - [x] Have bug reports generate a github issue
     - [ ] Simplify bug reporter (A new program instance is likely not needed)
+- [x] Update updater check GitHub for updates
+    - [x] Check for Releases
+    - [x] Check for Pre-Releases
 
 #### ---3.0---
 - [ ] Improve distro compatibility
