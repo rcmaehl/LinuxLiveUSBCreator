@@ -47,6 +47,8 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
 - [x] Improve Windows 10 handling
     - [x] Update @OSVersion calls
     - [x] Check for other issues/conflicts
+- [ ] Disable Analytics until GDPR implications can be understood
+    - [ ] Get in contact with an EU Lawyer
 - [x] Update updater check GitHub for updates
     - [x] Check for Releases
     - [x] Check for Pre-Releases
