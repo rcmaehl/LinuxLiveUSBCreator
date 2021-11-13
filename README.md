@@ -30,22 +30,13 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
         - [x] TraySetIcon / TraySetPauseIcon
         - [x] _GDIPlus_ImageLoadFromFile
     - [x] Add Themeing ability back by detecting a /theme/ directory, or similar
-    - [ ] Upscale GUI resources for those on High Scaling, High DPI monitors
+    - [ ] ~~Upscale GUI resources for those on High Scaling, High DPI monitors~~ Moved to 2.11
+        - [ ] Disable HiDPI mode
     - [ ] ~~FileInstall or FileWrite needed .cfg files~~ (Included in tools.zip)
-    - [ ] Update tools in tools folder
+    - [x] Update tools in tools folder
         - [x] Update Executables
         - [x] Update Licenses
-        - [ ] Check for incompatibilities/changes
-- [ ] Improve messages
-    - [ ] Improve errors (e.g. Drive free space insuffient)
-    - [ ] Improve logging (e.g. Log more events)
-    - [ ] Improve translations (e.g. spaces between sentences and punctuation)
-    - [ ] Update translations (***LAST STEP BEFORE RELEASE***)
-    - [ ] Create Wiki
-        - [ ] Convert FAQ (http://www.linuxliveusb.com/en/help/faq)
-        - [ ] Convert Help & Guide (http://www.linuxliveusb.com/en/help)
-        - [ ] Convert Features (http://www.linuxliveusb.com/en/features)
-        - [ ] Convert Supported Distros (http://www.linuxliveusb.com/en/supported-linuxes)
+        - [x] Check for incompatibilities/changes
 - [x] Improve Windows 10 handling
     - [x] Update @OSVersion calls
     - [x] Check for other issues/conflicts
@@ -56,6 +47,19 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
 - [x] Update updater check GitHub for updates
     - [x] Check for Releases
     - [x] Check for Pre-Releases
+
+#### ---2.11--
+
+- [ ] Improve messages
+    - [ ] Improve errors (e.g. Drive free space insuffient)
+    - [ ] Improve logging (e.g. Log more events)
+    - [ ] Improve translations (e.g. spaces between sentences and punctuation)
+    - [ ] Update translations (***LAST STEP BEFORE RELEASE***)
+    - [ ] Create Wiki
+        - [ ] Convert FAQ (http://www.linuxliveusb.com/en/help/faq)
+        - [ ] Convert Help & Guide (http://www.linuxliveusb.com/en/help)
+        - [ ] Convert Features (http://www.linuxliveusb.com/en/features)
+        - [ ] Convert Supported Distros (http://www.linuxliveusb.com/en/supported-linuxes)
 
 #### ---3.0---
 - [ ] Improve distro compatibility
