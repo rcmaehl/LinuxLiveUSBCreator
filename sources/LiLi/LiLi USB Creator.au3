@@ -149,7 +149,7 @@ FileChangeDir(@SystemDir)
 ; ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ; Global constants
-Global Const $software_version = "2.9"
+Global Const $software_version = "2.10"
 Global $DISPLAY_VERSION = ""
 Global $lang_folder = @ScriptDir & "\tools\languages\"
 Global $lang_ini
@@ -526,6 +526,9 @@ EndIf
 HotKeySet("{F1}", "GUI_Help")
 
 SendReport("Creating GUI")
+
+; Disable Scaling
+If @OSVersion = 'WIN_10' Then DllCall(@SystemDir & "\User32.dll", "bool", "SetProcessDpiAwarenessContext", "HWND", "DPI_AWARENESS_CONTEXT" - 1)
 
 $GUI = GUICreate("LiLi USB Creator", 450, 750, -1, -1, $WS_POPUP, $WS_EX_LAYERED + $WS_EX_ACCEPTFILES)
 GUISetFont($font_size)
