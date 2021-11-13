@@ -17,10 +17,8 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
 
 #### ---2.10---
 - [ ] ~~Convert HotKeySet to GUISetAccelerators to not hijack entire keys system wide~~ (Not viable at this time.)
-- [ ] Disable Analytics until GDPR implications can be understood
-    - [ ] Get in contact with an EU Lawyer
 - [x] Get CI working for dev builds
-- [ ] Improve executiable resources to allow LiLi to be a single executible instead of an executible and extra files.
+- [x] Improve executiable resources to allow LiLi to be a single executible instead of an executible and extra files.
     - [x] Convert GUI Image creation calls to detect if compiled and use internal resources from #AutoIt3Wrapper_Res_Icon_Add / #AutoIt3Wrapper_Res_File_Add
         - [x] GUICtrlCreateGraphic / GUICtrlSetGraphic
         - [x] GUICtrlCreateIcon
@@ -31,7 +29,7 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
         - [x] _GDIPlus_ImageLoadFromFile
     - [x] Add Themeing ability back by detecting a /theme/ directory, or similar
     - [ ] ~~Upscale GUI resources for those on High Scaling, High DPI monitors~~ Moved to 2.11
-        - [ ] Disable HiDPI mode
+        - [x] Disable HiDPI mode
     - [ ] ~~FileInstall or FileWrite needed .cfg files~~ (Included in tools.zip)
     - [x] Update tools in tools folder
         - [x] Update Executables
@@ -43,13 +41,15 @@ This project aims to bring bug fixes and improvements to Linux Live USB Creator.
 - [ ] Update contact information within files to not bother the old developer
     - [x] Convert Emails to Discord Links
     - [x] Have bug reports generate a github issue
-    - [ ] Simplify bug reporter (A new program instance is likely not needed)
 - [x] Update updater check GitHub for updates
     - [x] Check for Releases
     - [x] Check for Pre-Releases
 
 #### ---2.11--
 
+- [ ] Disable Analytics until GDPR implications can be understood
+    - [ ] Get in contact with an EU Lawyer
+- [ ] Simplify bug reporter (A new program instance is likely not needed)
 - [ ] Improve messages
     - [ ] Improve errors (e.g. Drive free space insuffient)
     - [ ] Improve logging (e.g. Log more events)
