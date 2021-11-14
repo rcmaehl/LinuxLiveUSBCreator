@@ -28,42 +28,36 @@ jobs:
           Start-Process autoit-v3-setup.exe -ArgumentList /S -NoNewWindow -Wait
           Start-Process SciTE4AutoIt3.exe -ArgumentList /S -NoNewWindow -Wait
       - name: Zip Tools Folder
-        run: |
-           cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe\LinuxLiveUSBCreator
-           Compress-Archive -Path .\tools -Destination .\tools.zip -force
+        run: Compress-Archive -Path .\tools -Destination .\tools.zip -force
       - name: Compile
         run: |
-          cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe\LinuxLiveUSBCreator\sources\LiLi\
-          Start-Process "${env:ProgramFiles(x86)}\AutoIt3\AutoIt3.exe" "`"${env:ProgramFiles(x86)}\AutoIt3\SciTE\AutoIt3Wrapper\AutoIt3Wrapper.au3`" /NoStatus /prod /in LiLi USB Creator.au3" -NoNewWindow -Wait
-          sha256sum -b WhyNotWin*.exe > checksums.sha256
+          cd sources\LiLi\
+          Start-Process "${env:ProgramFiles(x86)}\AutoIt3\AutoIt3.exe" "`"${env:ProgramFiles(x86)}\AutoIt3\SciTE\AutoIt3Wrapper\AutoIt3Wrapper.au3`" /NoStatus /prod /in LiLiUSBCreator.au3" -NoNewWindow -Wait
+          sha256sum -b "LiLiUSBCreator.exe" > checksums.sha256
       - name: Rename and Aggregate Files
         run: |
-           cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe
            mkdir build
-           cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe\LinuxLiveUSBCreator
-           $ver= git rev-list --count HEAD
-           Remove-Item C:\"Program Files (x86)"\AutoIt3\Aut2Exe\LinuxLiveUSBCreator\tools -Recurse -Force
-           cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe\LinuxLiveUSBCreator\Sources\LiLi
-           Move-Item "LiLi USB Creator.exe" C:\"Program Files (x86)"\AutoIt3\Aut2Exe\build
-           cd C:\"Program Files (x86)"\AutoIt3\Aut2Exe\build
-           Rename-Item -Path "LiLi USB Creator.exe" -NewName LiLiUSBCreator-2.10dev$ver.exe
+           Remove-Item tools -Recurse -Force
+           cd sources\LiLi
+           Move-Item "LiLiUSBCreator.exe" ..\..\build
+           Move-Item checksums.sha256 ..\..\build
       - uses: actions/upload-artifact@v2
         with:
           name: lili
           path: |
-            Linux*.exe
-            checksums.sha256
+            build\LiLiUSBCreator.exe
+            build\checksums.sha256
           if-no-files-found: error
       - name: Zip package
         if: startsWith(github.ref, 'refs/tags/')
-        run: 7z a LinuxLiveUSBCreator.zip Linux*.exe checksums.sha256
+        run: 7z a LinuxLiveUSBCreator.zip build\LiLiUSBCreator.exe build\checksums.sha256
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            Linux*.exe
-            LinuxLiveUSB.zip
-            checksums.sha256
+            build\LiLiUSBCreator.exe
+            LinuxLiveUSBCreator.zip
+            build\checksums.sha256
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
